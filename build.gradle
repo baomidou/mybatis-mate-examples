@@ -1,0 +1,111 @@
+// 编译脚本
+buildscript {
+    ext {
+        springBootVersion = "2.4.2"
+        springCloudVersion = "2020.0.1"
+        mybatisPlusVersion = "3.4.3"
+    }
+
+    // 仓库配置
+    repositories {
+        mavenLocal()
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/spring' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://repo.spring.io/release' }
+        maven { url 'https://repo.spring.io/milestone' }
+        maven { url 'https://repo.spring.io/snapshot' }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        jcenter()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("com.guardsquare:proguard-gradle:7.1.0")
+    }
+}
+
+description = "MybatisPlus 企业模块版"
+
+// 项目配置
+allprojects {
+    group "mybatis.mate"
+    version "1.0"
+
+}
+
+// 子模块配置
+subprojects {
+    apply plugin: 'java-library'
+    apply plugin: 'maven-publish'
+    apply plugin: "io.spring.dependency-management"
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+        options.warnings = false
+    }
+
+    // 仓库配置
+    repositories {
+        mavenLocal()
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/spring' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://repo.spring.io/release' }
+        maven { url 'https://repo.spring.io/milestone' }
+        maven { url 'https://repo.spring.io/snapshot' }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        jcenter()
+    }
+
+    // 依赖管理
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+
+        dependencies {
+            dependency("com.baomidou:mybatis-plus-boot-starter:${mybatisPlusVersion}")
+            dependency("com.baomidou:mybatis-plus-core:${mybatisPlusVersion}")
+            dependency("com.baomidou:mybatis-plus-extension:${mybatisPlusVersion}")
+            dependency("org.modelmapper:modelmapper:2.4.4")
+            dependency("org.aspectj:aspectjweaver:1.9.7")
+            dependency("org.jasypt:jasypt:1.9.3")
+            dependency("com.h2database:h2:1.4.200")
+            dependency("org.postgresql:postgresql:42.2.23.jre7")
+            dependency("mysql:mysql-connector-java:8.0.26")
+            dependency("mybatis.mate:mybatis-mate-annotation:1.0.0")
+            dependency("mybatis.mate:mybatis-mate-starter:1.0.0")
+            // 编译测试
+            dependency("javax.servlet:javax.servlet-api:3.1.0")
+            dependency("junit:junit:4.12")
+        }
+    }
+
+    // 依赖配置
+    dependencies {
+        // 日志
+        api("org.slf4j:slf4j-api")
+
+        api fileTree(dir: "../libs", include: "*.jar")
+//        api("mybatis.mate:mybatis-mate-starter")
+//        api("mybatis.mate:mybatis-mate-annotation")
+
+        api("com.baomidou:mybatis-plus-boot-starter")
+        api("org.springframework.boot:spring-boot-starter-web")
+        api("org.springframework.boot:spring-boot-starter-jdbc")
+
+        compileOnly("javax.servlet:javax.servlet-api")
+
+        // lombok
+        compileOnly("org.projectlombok:lombok")
+        annotationProcessor("org.projectlombok:lombok")
+        testAnnotationProcessor("org.projectlombok:lombok")
+        testCompileOnly("org.projectlombok:lombok")
+    }
+
+    // 编译环境 JDK1.8
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}

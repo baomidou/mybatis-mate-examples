@@ -1,0 +1,29 @@
+# ignore file
+*.iml
+*.log
+*.logs
+*.ipr
+*.classpath
+*.project
+/hs_err_pid*.log
+
+# ignore direcoties
+/c:/
+**/out/**
+/logs/
+**/contiperf-report/
+**/build/
+/patzn-entitys/out/
+/patzn-commons/out/
+/patzn-feign-base/out/
+/patzn-feign-lims/out/
+/patzn-feign-oss/out/
+/patzn-feign-standard/out/
+/patzn-excel/out/
+/patzn-mq-starter/out/
+/patzn-obs-starter/out/
+.gradle/
+.idea/
+.settings/
+bin/
+/hs_err*.log

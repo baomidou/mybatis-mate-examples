@@ -1,0 +1,38 @@
+# DataSource Config
+spring:
+  profiles:
+    active: postgres
+
+# Mybatis Mate 配置
+mybatis-mate:
+  cert:
+    grant: ☺请添加微信wx153666购买授权，不白嫖从我做起！
+    license: SM/hy2HGmqRZIw7NE5i1vKIiHOQLGXGymokyRCkR+TYuNZuVTdYiESr41OZiYyDkH095+Y5Ifc7tCyVeGi3qrsnyninzgcmvZsUKDl9kQYXzvbt/R7UMj6yqchPsZYf0UQ0mvRyoja1ljXiqbz49qrqXy0q1umWBEzrbH7QjE55M/bnABovM5ljCoENfY2b0EvSaJCUeqeAAxM3K6VrBo0YI4rz9Uo28AXhRgAyaI0QgMy+APM5bCdp9GEXHXYEyApMDvRCqWLfh5WZVdDWD5PZouQL3TKD3kqEf4k+Z1GkrVtHDS9mugpbSP533dHd9O+NF1KpOhkN0lVojrJ21Bg==
+  sharding:
+    primary: mysql # 默认选择数据源
+    datasource:
+      mysql:
+        - key: t1
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+          username: root
+          schema: test
+        - key: t2
+          cluster: slave # 从库读写分离时候负责 sql 查询操作，主库 master 默认可以不写
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/test2?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+          username: root
+          schema: test2
+      postgres:
+        - key: t1
+          driver-class-name: org.postgresql.Driver
+          url: jdbc:postgresql://localhost:5432/test
+          username: postgres
+          password: 123456
+          schema: test
+
+# Logger Config
+logging:
+  level:
+    mybatis.mate: debug
+    org.apache: debug

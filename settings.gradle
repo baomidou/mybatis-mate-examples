@@ -1,0 +1,9 @@
+// MybatisPlus 企业级模块
+rootProject.name = 'mybatis-mate-examples'
+
+include 'mybatis-mate-ddl-mysql'
+include 'mybatis-mate-ddl-postgres'
+include 'mybatis-mate-dict'
+include 'mybatis-mate-encrypt'
+include 'mybatis-mate-sensitive-jackson'
+include 'mybatis-mate-sharding'

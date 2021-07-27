@@ -8,20 +8,12 @@
 /hs_err_pid*.log
 
 # ignore direcoties
+libs/
 /c:/
 **/out/**
 /logs/
 **/contiperf-report/
 **/build/
-/patzn-entitys/out/
-/patzn-commons/out/
-/patzn-feign-base/out/
-/patzn-feign-lims/out/
-/patzn-feign-oss/out/
-/patzn-feign-standard/out/
-/patzn-excel/out/
-/patzn-mq-starter/out/
-/patzn-obs-starter/out/
 .gradle/
 .idea/
 .settings/

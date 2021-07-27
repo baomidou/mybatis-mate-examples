@@ -3,6 +3,25 @@
 #### 介绍
 mybatis-plus 企业（数据优雅处理）模块
 
+- Spring Boot 引入自动依赖注解包
+
+```
+<dependency>
+  <groupId>com.baomidou</groupId>
+  <artifactId>mybatis-mate-starter</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
+- 注解（实体分包使用）
+
+```
+<dependency>
+  <groupId>com.baomidou</groupId>
+  <artifactId>mybatis-mate-annotation</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
 
 - mybatis-mate-ddl-mysql ：表结构自动维护 Mysql 示例
 

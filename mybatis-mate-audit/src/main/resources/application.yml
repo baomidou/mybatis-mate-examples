@@ -1,0 +1,22 @@
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    schema: classpath:db/schema-h2.sql
+    data: classpath:db/data-h2.sql
+    url: jdbc:h2:mem:test
+    username: root
+    password: test
+
+# Mybatis Mate 配置
+mybatis-mate:
+  cert:
+    grant: ☺请添加微信wx153666购买授权，不白嫖从我做起！
+    license: SM/hy2HGmqRZIw7NE5i1vKIiHOQLGXGymokyRCkR+TYuNZuVTdYiESr41OZiYyDkH095+Y5Ifc7tCyVeGi3qrsnyninzgcmvZsUKDl9kQYXzvbt/R7UMj6yqchPsZYf0UQ0mvRyoja1ljXiqbz49qrqXy0q1umWBEzrbH7QjE55M/bnABovM5ljCoENfY2b0EvSaJCUeqeAAxM3K6VrBo0YI4rz9Uo28AXhRgAyaI0QgMy+APM5bCdp9GEXHXYEyApMDvRCqWLfh5WZVdDWD5PZouQL3TKD3kqEf4k+Z1GkrVtHDS9mugpbSP533dHd9O+NF1KpOhkN0lVojrJ21Bg==
+  # 开启数据审计
+  audit: true
+
+# Logger Config
+logging:
+  level:
+    mybatis.mate: error

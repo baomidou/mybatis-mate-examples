@@ -72,6 +72,7 @@ subprojects {
             dependency("org.modelmapper:modelmapper:2.4.4")
             dependency("org.aspectj:aspectjweaver:1.9.7")
             dependency("org.jasypt:jasypt:1.9.3")
+            dependency("org.javers:javers-core:6.2.3")
             dependency("com.h2database:h2:1.4.200")
             dependency("org.postgresql:postgresql:42.2.23.jre7")
             dependency("mysql:mysql-connector-java:8.0.26")
@@ -87,7 +88,7 @@ subprojects {
         api("org.slf4j:slf4j-api")
 
 //        api fileTree(dir: "../libs", include: "*.jar")
-        api("com.baomidou:mybatis-mate-starter:1.0.1")
+        api("com.baomidou:mybatis-mate-starter:1.0.2")
 
         api("com.baomidou:mybatis-plus-boot-starter")
         api("org.springframework.boot:spring-boot-starter-web")

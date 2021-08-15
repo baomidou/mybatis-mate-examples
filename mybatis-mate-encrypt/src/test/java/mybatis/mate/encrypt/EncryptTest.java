@@ -29,7 +29,23 @@ public class EncryptTest {
         user.setPassword("123");
         user.setEmail("jobob@qq.com");
         assertThat(mapper.insert(user)).isGreaterThan(0);
-        assertThat(user.getId()).isNotNull();
-        System.err.println(mapper.selectById(user.getId()));
+        System.err.println("插入加密 password : " + user.getPassword());
+        System.err.println("插入加密 email : " + user.getEmail());
+
+        Long userId = user.getId();
+        assertThat(userId).isNotNull();
+
+        // 查询保存数据
+        user = mapper.selectById(userId);
+        System.err.println("解密内容 : " + user);
+
+        // 更新内容
+        user.setPassword("567");
+        user.setEmail("hi@abc.cn");
+        System.err.println("更新结果：" + mapper.updateById(user));;
+        System.err.println("更新加密 password : " + user.getPassword());
+        System.err.println("更新加密 email : " + user.getEmail());
+        user = mapper.selectById(userId);
+        System.err.println("解密内容 : " + user);
     }
 }

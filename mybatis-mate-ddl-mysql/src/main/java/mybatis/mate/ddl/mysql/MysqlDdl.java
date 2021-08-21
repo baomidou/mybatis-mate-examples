@@ -17,6 +17,7 @@ public class MysqlDdl implements IDdl {
         return Arrays.asList(
                 // 内置包方式
                 "db/tag-schema.sql",
+
                 // 文件绝对路径方式（修改为你电脑的地址）
                 "D:\\IdeaProjects\\mybatis-mate-examples\\mybatis-mate-ddl-mysql\\src\\main\\resources\\db\\tag-data.sql"
         );

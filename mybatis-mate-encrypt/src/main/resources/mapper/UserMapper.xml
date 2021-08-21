@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mate.encrypt.mapper.UserMapper">
+
+    <update id="insertBatchTest" parameterType="mybatis.mate.encrypt.entity.User">
+        INSERT INTO user (id,username,password,email) VALUES
+        <foreach collection="userList" item="item" separator=",">
+        (#{item.id},#{item.username},#{item.password},#{item.email})
+        </foreach>
+    </update>
+
+    <update id="updateBatchUserById" parameterType="mybatis.mate.encrypt.entity.User">
+        <foreach collection="userList" item="item">
+            UPDATE user SET password=#{item.password},email=#{item.email} WHERE id=#{item.id};
+        </foreach>
+    </update>
+</mapper>

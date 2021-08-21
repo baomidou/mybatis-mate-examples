@@ -18,6 +18,9 @@ public class DataDict implements IDataDict {
         put("1", "男");
     }};
 
+    /**
+     * 重写，获取枚举映射值
+     */
     @Override
     public String getNameByCode(FieldDict fieldDict, String code) {
         System.err.println("字段类型：" + fieldDict.type() + "，编码：" + code);

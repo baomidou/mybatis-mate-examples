@@ -14,6 +14,8 @@ mybatis-mate:
     license: SM/hy2HGmqRZIw7NE5i1vKIiHOQLGXGymokyRCkR+TYuNZuVTdYiESr41OZiYyDkH095+Y5Ifc7tCyVeGi3qrsnyninzgcmvZsUKDl9kQYXzvbt/R7UMj6yqchPsZYf0UQ0mvRyoja1ljXiqbz49qrqXy0q1umWBEzrbH7QjE55M/bnABovM5ljCoENfY2b0EvSaJCUeqeAAxM3K6VrBo0YI4rz9Uo28AXhRgAyaI0QgMy+APM5bCdp9GEXHXYEyApMDvRCqWLfh5WZVdDWD5PZouQL3TKD3kqEf4k+Z1GkrVtHDS9mugpbSP533dHd9O+NF1KpOhkN0lVojrJ21Bg==
   encryptor:
     password: qmh9MK4KsZY8FnqkJYk8tzgc0H
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
 
 # Logger Config
 logging:

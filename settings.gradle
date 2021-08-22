@@ -2,6 +2,7 @@
 rootProject.name = 'mybatis-mate-examples'
 
 include 'mybatis-mate-audit'
+include 'mybatis-mate-datascope'
 include 'mybatis-mate-ddl-mysql'
 include 'mybatis-mate-ddl-postgres'
 include 'mybatis-mate-dict'

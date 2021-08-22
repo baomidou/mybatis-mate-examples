@@ -9,7 +9,7 @@ mybatis-plus 企业（数据优雅处理）模块
 <dependency>
   <groupId>com.baomidou</groupId>
   <artifactId>mybatis-mate-starter</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.6</version>
 </dependency>
 ```
 
@@ -19,11 +19,14 @@ mybatis-plus 企业（数据优雅处理）模块
 <dependency>
   <groupId>com.baomidou</groupId>
   <artifactId>mybatis-mate-annotation</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.6</version>
 </dependency>
 ```
 
-- mybatis-mate-data-audit ：数据审计示例
+- mybatis-mate-data-audit ：数据审计（对账）示例
+
+
+- mybatis-mate-data-datascope ：数据范围（数据权限）示例
 
 
 - mybatis-mate-ddl-mysql ：表结构自动维护 Mysql 示例

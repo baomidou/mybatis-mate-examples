@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import mybatis.mate.encrypt.entity.User;
 import mybatis.mate.encrypt.mapper.UserMapper;
 import org.junit.Test;
+import org.junit.jupiter.api.Order;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -26,6 +27,7 @@ public class EncryptTest {
     private UserMapper mapper;
 
     @Test
+    @Order(1)
     public void test() {
         User user = new User();
         user.setId(1L);
@@ -48,10 +50,11 @@ public class EncryptTest {
     }
 
     @Test
+    @Order(2)
     public void testBatch() {
         List<User> userList = new ArrayList<>();
         User user = new User();
-        user.setId(1L);
+        user.setId(2L);
         user.setUsername("汤姆凯特");
         user.setPassword("321");
         user.setEmail("tom@163.com");
@@ -121,5 +124,22 @@ public class EncryptTest {
         List<User> newUserList = mapper.selectList(null);
         System.out.println("查询新的结果: ");
         newUserList.forEach(System.err::println);
+    }
+
+    @Test
+    @Order(3)
+    public void testNull() {
+        User user = new User();
+        user.setId(3L);
+        user.setUsername("安吉拉");
+        user.setPassword("789");
+        // 测试 null 值问题
+        user.setEmail(null);
+        assertThat(mapper.insert(user)).isGreaterThan(0);
+        System.err.println("插入加密后：" + user);
+        assertThat(user.getEmail()).isNull();
+        user = mapper.selectById(user.getId());
+        System.err.println("数据库中的内容：" + user);
+        assertThat(user.getEmail()).isNull();
     }
 }

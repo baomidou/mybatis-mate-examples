@@ -1,8 +1,9 @@
 package mybatis.mate.datascope.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import mybatis.mate.datascope.entity.User;
 import mybatis.mate.datascope.mapper.UserMapper;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -12,7 +13,7 @@ public class UserService {
     private UserMapper userMapper;
 
     public void dataScope() {
-        System.err.println("-----publishEvent-----begin");
-        userMapper.selectTestList().forEach(System.out::println);
+        Page page = new Page<User>(1, 20);
+        userMapper.selectTestList(page, 1L, "Jack").forEach(System.out::println);
     }
 }

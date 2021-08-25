@@ -37,6 +37,8 @@ mybatis-plus 企业（数据优雅处理）模块
 
 - mybatis-mate-dict ：字段数据字典自动映射示例
 
+`该功能可以绑定任意类型的数据源，例如：根据 orderId 绑定 orderNo`
+
 
 - mybatis-mate-encrypt ：字段加密解密示例
 

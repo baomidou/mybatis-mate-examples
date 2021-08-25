@@ -1,14 +1,14 @@
 package mybatis.mate.dict.config;
 
-import mybatis.mate.annotation.FieldDict;
-import mybatis.mate.sets.IDataDict;
+import mybatis.mate.annotation.FieldBind;
+import mybatis.mate.sets.IDataBind;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
-public class DataDict implements IDataDict {
+public class DataBind implements IDataBind {
 
     /**
      * 从数据库或缓存中获取
@@ -22,8 +22,8 @@ public class DataDict implements IDataDict {
      * 重写，获取枚举映射值
      */
     @Override
-    public String getNameByCode(FieldDict fieldDict, String code) {
-        System.err.println("字段类型：" + fieldDict.type() + "，编码：" + code);
-        return SEX_MAP.get(code);
+    public String getNameByCode(FieldBind fieldBind, Object source) {
+        System.err.println("字段类型：" + fieldBind.type() + "，编码：" + source);
+        return SEX_MAP.get(source);
     }
 }

@@ -11,6 +11,7 @@ import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
+// 这里作用于整个类 @DataScope(...)
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
 
@@ -23,4 +24,7 @@ public interface UserMapper extends BaseMapper<User> {
     })
     @Select("select u.* from user u")
     List<User> selectTestList(IPage<User> page, Long id, @Param("name") String username);
+
+    // 忽略某个方法
+    // @DataScope(ignore = true)
 }

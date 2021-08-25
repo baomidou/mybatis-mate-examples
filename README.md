@@ -23,6 +23,9 @@ mybatis-plus 企业（数据优雅处理）模块
 </dependency>
 ```
 
+- 咨询作者
+![微信 wx153666](https://images.gitee.com/uploads/images/2021/0505/184033_671944d5_12260.jpeg "QQ图片20210505184003.jpg")
+
 - mybatis-mate-data-audit ：数据审计（对账）示例
 
 

@@ -16,10 +16,8 @@ import net.sf.jsqlparser.statement.select.PlainSelect;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.HashSet;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @Configuration
 public class DataScopeConfig {
@@ -41,12 +39,12 @@ public class DataScopeConfig {
                     for (DataColumnProperty dataColumn : dataColumns) {
                         if ("department_id".equals(dataColumn.getName())) {
                             // 追加部门字段 IN 条件，也可以是 SQL 语句
-                            Set<String> deptIds = new HashSet<>();
-                            deptIds.add("1");
-                            deptIds.add("2");
-                            deptIds.add("3");
-                            deptIds.add("5");
-                            ItemsList itemsList = new ExpressionList(deptIds.stream().map(StringValue::new).collect(Collectors.toList()));
+                            ItemsList itemsList = new ExpressionList(Arrays.asList(
+                                    new StringValue("1"),
+                                    new StringValue("2"),
+                                    new StringValue("3"),
+                                    new StringValue("5")
+                            ));
                             InExpression inExpression = new InExpression(new Column(dataColumn.getAliasDotName()), itemsList);
                             if (null == plainSelect.getWhere()) {
                                 // 不存在 where 条件

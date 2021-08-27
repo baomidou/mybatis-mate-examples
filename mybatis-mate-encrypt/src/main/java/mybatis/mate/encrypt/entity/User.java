@@ -17,5 +17,7 @@ public class User {
     private String password;
     @FieldEncrypt
     private String email;
+    @FieldEncrypt(algorithm = Algorithm.MD5_32)
+    private String md5;
 
 }

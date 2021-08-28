@@ -9,7 +9,7 @@ mybatis-plus 企业（数据优雅处理）模块
 <dependency>
   <groupId>com.baomidou</groupId>
   <artifactId>mybatis-mate-starter</artifactId>
-  <version>1.0.6</version>
+  <version>1.0.7</version>
 </dependency>
 ```
 
@@ -19,7 +19,7 @@ mybatis-plus 企业（数据优雅处理）模块
 <dependency>
   <groupId>com.baomidou</groupId>
   <artifactId>mybatis-mate-annotation</artifactId>
-  <version>1.0.6</version>
+  <version>1.0.7</version>
 </dependency>
 ```
 

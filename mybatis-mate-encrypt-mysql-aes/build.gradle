@@ -1,7 +1,7 @@
 description "字段加解密示例"
 
 dependencies {
-    implementation("com.h2database:h2")
+    implementation("mysql:mysql-connector-java")
 
     // 默认加密库，自定义加密可以不依赖
     implementation("org.jasypt:jasypt")

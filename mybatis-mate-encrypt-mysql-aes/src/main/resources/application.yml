@@ -1,0 +1,39 @@
+server:
+  port: 8080
+logging:
+  level:
+    org.springframework: info
+    com.onestop: debug
+# 数据源
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true
+    username: root
+    password:
+
+mybatis-plus:
+#  typeAliasesPackage: com.onestop.**.model.entity
+#  mapper-locations: classpath:/mapper/*Mapper.xml
+  configuration:
+    #驼峰下划线转换
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      #逻辑删除配置（下面3个配置）
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      #表名、是否使用下划线命名，默认数据库表使用下划线命名
+      table-underline: true
+
+# Mybatis Mate 配置
+mybatis-mate:
+  cert:
+    grant: ☺请添加微信wx153666购买授权，不白嫖从我做起！
+    license: SM/hy2HGmqRZIw7NE5i1vKIiHOQLGXGymokyRCkR+TYuNZuVTdYiESr41OZiYyDkH095+Y5Ifc7tCyVeGi3qrsnyninzgcmvZsUKDl9kQYXzvbt/R7UMj6yqchPsZYf0UQ0mvRyoja1ljXiqbz49qrqXy0q1umWBEzrbH7QjE55M/bnABovM5ljCoENfY2b0EvSaJCUeqeAAxM3K6VrBo0YI4rz9Uo28AXhRgAyaI0QgMy+APM5bCdp9GEXHXYEyApMDvRCqWLfh5WZVdDWD5PZouQL3TKD3kqEf4k+Z1GkrVtHDS9mugpbSP533dHd9O+NF1KpOhkN0lVojrJ21Bg==
+  # 全局配置加密算法密钥
+  encryptor:
+    # 随机字符串作为密钥即可
+    password: qmh9MK4KsZY8FnqkJYk8tzgc0H
+    algorithm: AES

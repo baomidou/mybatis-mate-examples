@@ -87,7 +87,7 @@ subprojects {
         api("org.slf4j:slf4j-api")
 
 //        api fileTree(dir: "../libs", include: "*.jar")
-        api("com.baomidou:mybatis-mate-starter:1.0.8")
+        api("com.baomidou:mybatis-mate-starter:1.0.9")
 
         api("com.baomidou:mybatis-plus-boot-starter")
         api("org.springframework.boot:spring-boot-starter-web")

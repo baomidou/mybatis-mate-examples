@@ -1,6 +1,6 @@
 package mybatis.mate.sm4;
 
-import mybatis.mate.sm4.config.Sm4Util;
+import mybatis.mate.encrypt.SM4;
 import mybatis.mate.sm4.entity.User;
 import mybatis.mate.sm4.mapper.UserMapper;
 import org.junit.Test;
@@ -30,10 +30,10 @@ public class EncryptTest {
 
     @Test
     public void encrypt() throws Exception {
-        final String key = Sm4Util.generateKey();
-        System.out.println("加密KEY = " + key);
-        String output = Sm4Util.encrypt("sm4对称加密<pkcs5>", key);
+        final String key = SM4.generateKey();
+        System.out.println("加密 KEY = " + key);
+        String output = SM4.encrypt(key, "sm4对称加密<pkcs5>");
         System.out.printf("SM4-ECB-PKCS5Padding，加密输出HEX = %s \n", output);
-        System.out.printf("SM4-ECB-PKCS5Padding，解密输出 = %s \n", Sm4Util.decrypt(output, key));
+        System.out.printf("SM4-ECB-PKCS5Padding，解密输出 = %s \n", SM4.decrypt(key, output));
     }
 }

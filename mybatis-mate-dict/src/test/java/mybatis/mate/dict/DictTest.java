@@ -27,6 +27,7 @@ public class DictTest {
         user.setId(IdWorker.getId());
         user.setUsername("小羊肖恩");
         user.setSex(1);
+        user.setStatus(1);
         assertThat(mapper.insert(user)).isGreaterThan(0);
         assertThat(user.getId()).isNotNull();
         System.out.println(mapper.selectById(user.getId()));

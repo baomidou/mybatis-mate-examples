@@ -9,7 +9,7 @@ mybatis-plus 企业（数据优雅处理）模块
 <dependency>
   <groupId>com.baomidou</groupId>
   <artifactId>mybatis-mate-starter</artifactId>
-  <version>1.0.8</version>
+  <version>1.0.10</version>
 </dependency>
 ```
 
@@ -19,12 +19,13 @@ mybatis-plus 企业（数据优雅处理）模块
 <dependency>
   <groupId>com.baomidou</groupId>
   <artifactId>mybatis-mate-annotation</artifactId>
-  <version>1.0.8</version>
+  <version>1.0.10</version>
 </dependency>
 ```
 
 - 咨询作者
-![微信 wx153666](https://images.gitee.com/uploads/images/2021/0505/184033_671944d5_12260.jpeg "QQ图片20210505184003.jpg")
+
+![微信 wx153666](https://images.gitee.com/uploads/images/2021/0903/235825_2d017339_12260.jpeg)
 
 - mybatis-mate-data-audit ：数据审计（对账）示例
 

@@ -1,4 +1,4 @@
-package mybatis.mate.encrypt.mysql.aes;
+package mybatis.mate.sm4.mysql.aes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

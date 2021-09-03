@@ -1,8 +1,8 @@
-package mybatis.mate.encrypt.mysql.aes.mapper;
+package mybatis.mate.sm4.mysql.aes.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import mybatis.mate.encrypt.mysql.aes.entity.AttrVO;
-import mybatis.mate.encrypt.mysql.aes.entity.ComAttr;
+import mybatis.mate.sm4.mysql.aes.entity.AttrVO;
+import mybatis.mate.sm4.mysql.aes.entity.ComAttr;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 

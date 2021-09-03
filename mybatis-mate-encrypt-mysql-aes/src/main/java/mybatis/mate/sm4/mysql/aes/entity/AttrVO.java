@@ -1,4 +1,4 @@
-package mybatis.mate.encrypt.mysql.aes.entity;
+package mybatis.mate.sm4.mysql.aes.entity;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -49,6 +49,9 @@ mybatis-plus 企业（数据优雅处理）模块
 - mybatis-mate-encrypt-mysql-aes ：数据库 mysql 字段 aes 双向加密解密示例
 
 
+- mybatis-mate-encrypt-sm4 ：国密 sm4 加密算法示例
+
+
 - mybatis-mate-sensitive-jackson ：字段脱敏 jackson 实现示例
 
 

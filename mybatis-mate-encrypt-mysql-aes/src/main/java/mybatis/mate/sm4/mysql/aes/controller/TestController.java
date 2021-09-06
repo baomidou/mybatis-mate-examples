@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * 测试控制器
@@ -30,5 +31,10 @@ public class TestController {
             put("dbList", comAttrMapper.selectList(null));
             put("voList", comAttrMapper.selectVO());
         }};
+    }
+
+    @GetMapping("/test2")
+    public List<String> test2() {
+        return comAttrMapper.selectVO2();
     }
 }

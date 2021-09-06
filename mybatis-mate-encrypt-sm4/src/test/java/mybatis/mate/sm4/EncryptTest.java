@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * 字段加解密测试
@@ -22,10 +23,24 @@ public class EncryptTest {
 
     @Test
     public void testSm4() {
-        User user = new User(1L, "hi china", "123456", "asd@qq.com", "asd");
+        User user = new User(1L, "hi china", "123456", "asd@qq.com", "asd", null);
         Assertions.assertEquals(1, mapper.insert(user));
         System.out.println("加密内容：" + user);
-        System.out.println("查询数据库内容：" + mapper.selectById(user.getId()));
+        user = mapper.selectById(user.getId());
+        System.out.println("查询数据库内容：" + user);
+        Assertions.assertEquals("asd@qq.com", user.getEmail());
+        Assertions.assertEquals(1, mapper.insert(new User(2L, "hi mp",
+                "123456", "mp@qq.com", "mp", null)));
+        List<User> userList = mapper.selectList(null);
+        Assertions.assertEquals(userList.size(), 2);
+        for (User _user : userList) {
+            Assertions.assertEquals("bind_md_" + _user.getMd5(), _user.getMd5Text());
+            if (_user.getId().equals(1L)) {
+                Assertions.assertEquals("asd@qq.com", _user.getEmail());
+            } else if (_user.getId().equals(2L)) {
+                Assertions.assertEquals("mp@qq.com", _user.getEmail());
+            }
+        }
     }
 
     @Test

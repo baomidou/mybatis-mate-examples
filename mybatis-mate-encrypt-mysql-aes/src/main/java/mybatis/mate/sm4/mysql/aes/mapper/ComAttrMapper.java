@@ -16,4 +16,7 @@ public interface ComAttrMapper extends BaseMapper<ComAttr> {
      */
     @Select("SELECT attr_id,email,mobile,(SELECT  CURRENT_DATE FROM DUAL) time FROM attr")
     List<AttrVO> selectVO();
+
+    @Select("SELECT email FROM attr")
+    List<String> selectVO2();
 }

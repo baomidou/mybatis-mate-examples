@@ -1,10 +1,9 @@
 package mybatis.mate.sm4.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import com.baomidou.mybatisplus.annotation.TableField;
+import lombok.*;
 import mybatis.mate.annotation.Algorithm;
+import mybatis.mate.annotation.FieldBind;
 import mybatis.mate.annotation.FieldEncrypt;
 import mybatis.mate.encrypt.SM4;
 
@@ -12,6 +11,7 @@ import mybatis.mate.encrypt.SM4;
 @Setter
 @ToString
 @AllArgsConstructor
+@NoArgsConstructor
 public class User {
     private Long id;
     private String username;
@@ -24,7 +24,15 @@ public class User {
      */
     @FieldEncrypt(algorithm = Algorithm.SM4)
     private String email;
+
+    /**
+     * 加密数据绑定混合
+     */
     @FieldEncrypt(algorithm = Algorithm.MD5_32)
+    @FieldBind(type = "test_bind", target = "md5Text")
     private String md5;
+
+    @TableField(exist = false)
+    private String md5Text;
 
 }

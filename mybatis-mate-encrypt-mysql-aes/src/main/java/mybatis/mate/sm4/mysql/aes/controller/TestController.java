@@ -34,7 +34,7 @@ public class TestController {
     }
 
     @GetMapping("/test2")
-    public List<String> test2() {
+    public List<ComAttr> test2() {
         return comAttrMapper.selectVO2();
     }
 }

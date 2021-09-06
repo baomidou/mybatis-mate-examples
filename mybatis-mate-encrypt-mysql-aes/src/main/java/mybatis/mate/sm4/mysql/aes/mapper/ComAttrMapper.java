@@ -18,5 +18,5 @@ public interface ComAttrMapper extends BaseMapper<ComAttr> {
     List<AttrVO> selectVO();
 
     @Select("SELECT email FROM attr")
-    List<String> selectVO2();
+    List<ComAttr> selectVO2();
 }

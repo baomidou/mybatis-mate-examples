@@ -1,7 +1,7 @@
-package mybatis.mate.sm4.mysql.aes.controller;
+package mybatis.mate.sm.mysql.aes.controller;
 
-import mybatis.mate.sm4.mysql.aes.entity.ComAttr;
-import mybatis.mate.sm4.mysql.aes.mapper.ComAttrMapper;
+import mybatis.mate.sm.mysql.aes.entity.ComAttr;
+import mybatis.mate.sm.mysql.aes.mapper.ComAttrMapper;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

@@ -1,4 +1,4 @@
-package mybatis.mate.sm4.mysql.aes;
+package mybatis.mate.sm.mysql.aes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,0 +1,22 @@
+
+POST http://localhost:8080/json
+Content-Type: application/json
+
+{
+  "name": "王安石有一只猫tomcat汤姆凯特",
+  "sex": 1,
+  "age": 6
+}
+
+###
+
+POST http://localhost:8080/json
+Content-Type: application/json
+
+{
+  "name": "没有敏感词",
+  "sex": 1,
+  "age": 6
+}
+
+###

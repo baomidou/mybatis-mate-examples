@@ -9,7 +9,7 @@ mybatis-plus 企业（数据优雅处理）模块
 <dependency>
   <groupId>com.baomidou</groupId>
   <artifactId>mybatis-mate-starter</artifactId>
-  <version>1.0.13</version>
+  <version>1.0.14</version>
 </dependency>
 ```
 
@@ -19,7 +19,7 @@ mybatis-plus 企业（数据优雅处理）模块
 <dependency>
   <groupId>com.baomidou</groupId>
   <artifactId>mybatis-mate-annotation</artifactId>
-  <version>1.0.13</version>
+  <version>1.0.14</version>
 </dependency>
 ```
 
@@ -49,5 +49,7 @@ mybatis-plus 企业（数据优雅处理）模块
 
 - mybatis-mate-sensitive-words ：请求参数 敏感词 过滤 AC 算法 示例
 
-- mybatis-mate-sharding ：数据库分库分表、动态据源、读写分离、数据库健康检查自动切换示例
+- mybatis-mate-sharding ：数据库分库分表、动态数据源、读写分离、数据库健康检查自动切换示例
+
+- mybatis-mate-sharding-jta-atomikos ：动态多数据源事务 jta atomikos 示例
 

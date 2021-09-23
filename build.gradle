@@ -1,8 +1,8 @@
 // 编译脚本
 buildscript {
     ext {
-        springBootVersion = "2.5.3"
-        mybatisPlusVersion = "3.4.3"
+        springBootVersion = "2.5.5"
+        mybatisPlusVersion = "3.4.3.3"
     }
 
     // 仓库配置
@@ -86,8 +86,8 @@ subprojects {
         // 日志
         api("org.slf4j:slf4j-api")
 
-//        api fileTree(dir: "../libs", include: "*.jar")
-        api("com.baomidou:mybatis-mate-starter:1.0.13")
+        api fileTree(dir: "../libs", include: "*.jar")
+//        api("com.baomidou:mybatis-mate-starter:1.0.14")
 
         api("com.baomidou:mybatis-plus-boot-starter")
         api("org.springframework.boot:spring-boot-starter-web")

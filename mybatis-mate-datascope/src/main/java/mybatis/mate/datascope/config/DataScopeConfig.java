@@ -26,7 +26,7 @@ public class DataScopeConfig {
     public IDataScopeProvider dataScopeProvider() {
         return new AbstractDataScopeProvider() {
             @Override
-            protected void setWhere(PlainSelect plainSelect, Object[] args, DataScopeProperty dataScopeProperty) {
+            public void setWhere(PlainSelect plainSelect, Object[] args, DataScopeProperty dataScopeProperty) {
                 // args 中包含 mapper 方法的请求参数，需要使用可以自行获取
                 /*
                     // 测试数据权限，最终执行 SQL 语句

@@ -1,4 +1,4 @@
-package mybatis.mate.sharding.config;
+package mybatis.mate.sharding.jta.atomikos.config;
 
 import mybatis.mate.ddl.IDdl;
 import mybatis.mate.sharding.ShardingDatasource;
@@ -11,15 +11,13 @@ import java.util.List;
 import java.util.function.Consumer;
 
 @Component
-public class PostgresDdl implements IDdl {
+public class Db1 implements IDdl {
     @Resource
     private ShardingDatasource shardingDatasource;
 
     @Override
     public void runScript(Consumer<DataSource> consumer) {
-        // 多数据源指定，主库初始化从库自动同步
-        // postgrest2 = postgres（数据源group） + t1（数据源key）
-        consumer.accept(shardingDatasource.getDataSource("postgrest1"));
+        consumer.accept(shardingDatasource.getDataSource("testt1"));
     }
 
     /**
@@ -27,9 +25,6 @@ public class PostgresDdl implements IDdl {
      */
     @Override
     public List<String> getSqlFiles() {
-        return Arrays.asList(
-                "db/user-postgres.sql"
-                // ,"db/user-data.sql"
-        );
+        return Arrays.asList("db/order-db1.sql");
     }
 }

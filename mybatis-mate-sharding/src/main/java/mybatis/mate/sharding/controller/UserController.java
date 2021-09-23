@@ -47,7 +47,7 @@ public class UserController {
         mapper.insert(user);
 
         // mysql t2 从库未做同步，这里是查不出结果的
-        Integer count = mapper.selectCount(getWrapperByUsername(user.getUsername()));
+        Long count = mapper.selectCount(getWrapperByUsername(user.getUsername()));
         System.err.println(count == 0);
 
         // mysql t2 查初始化 Duo 记录

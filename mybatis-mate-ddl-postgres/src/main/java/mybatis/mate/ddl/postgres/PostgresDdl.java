@@ -1,13 +1,13 @@
 package mybatis.mate.ddl.postgres;
 
-import mybatis.mate.ddl.IDdl;
+import mybatis.mate.ddl.SimpleDdl;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
 
 @Component
-public class PostgresDdl implements IDdl {
+public class PostgresDdl extends SimpleDdl {
 
     /**
      * 执行 SQL 脚本方式

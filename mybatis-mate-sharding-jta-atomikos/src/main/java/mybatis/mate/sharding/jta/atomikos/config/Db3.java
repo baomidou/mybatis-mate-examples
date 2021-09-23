@@ -1,6 +1,8 @@
-package mybatis.mate.sharding.config;
+package mybatis.mate.sharding.jta.atomikos.config;
 
 import mybatis.mate.ddl.IDdl;
+import mybatis.mate.ddl.IDdlGenerator;
+import mybatis.mate.ddl.PostgresDdlGenerator;
 import mybatis.mate.sharding.ShardingDatasource;
 import org.springframework.stereotype.Component;
 
@@ -11,15 +13,13 @@ import java.util.List;
 import java.util.function.Consumer;
 
 @Component
-public class PostgresDdl implements IDdl {
+public class Db3 implements IDdl {
     @Resource
     private ShardingDatasource shardingDatasource;
 
     @Override
     public void runScript(Consumer<DataSource> consumer) {
-        // 多数据源指定，主库初始化从库自动同步
-        // postgrest2 = postgres（数据源group） + t1（数据源key）
-        consumer.accept(shardingDatasource.getDataSource("postgrest1"));
+        consumer.accept(shardingDatasource.getDataSource("test3t1"));
     }
 
     /**
@@ -27,9 +27,15 @@ public class PostgresDdl implements IDdl {
      */
     @Override
     public List<String> getSqlFiles() {
-        return Arrays.asList(
-                "db/user-postgres.sql"
-                // ,"db/user-data.sql"
-        );
+        return Arrays.asList("db/log-db3.sql");
+    }
+
+    /**
+     * 该方法也可以不指定 ddl 生成器默认自动识别
+     */
+    @Override
+    public IDdlGenerator getDdlGenerator() {
+        // 指定数据库 ddl 创建处理器
+        return PostgresDdlGenerator.newInstance();
     }
 }

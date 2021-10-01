@@ -18,6 +18,7 @@ public class DataScopeTest {
 
     @Test
     public void test() {
+        // 查看控制台，输出执行 sql 语句
         userService.dataScope();
     }
 }

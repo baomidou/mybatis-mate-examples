@@ -1,0 +1,26 @@
+# Mybatis Mate 配置
+mybatis-mate:
+  cert:
+    grant: ☺请添加微信wx153666购买授权，不白嫖从我做起！
+    license: SM/hy2HGmqRZIw7NE5i1vKIiHOQLGXGymokyRCkR+TYuNZuVTdYiESr41OZiYyDkH095+Y5Ifc7tCyVeGi3qrsnyninzgcmvZsUKDl9kQYXzvbt/R7UMj6yqchPsZYf0UQ0mvRyoja1ljXiqbz49qrqXy0q1umWBEzrbH7QjE55M/bnABovM5ljCoENfY2b0EvSaJCUeqeAAxM3K6VrBo0YI4rz9Uo28AXhRgAyaI0QgMy+APM5bCdp9GEXHXYEyApMDvRCqWLfh5WZVdDWD5PZouQL3TKD3kqEf4k+Z1GkrVtHDS9mugpbSP533dHd9O+NF1KpOhkN0lVojrJ21Bg==
+  sharding:
+    health: true # 健康检测
+    primary: mysql # 默认选择数据源
+    datasource:
+      mysql:
+        - key: t1
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+          username: root
+          schema: test
+
+# 允许bean定义重写
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+# Logger Config
+logging:
+  level:
+    mybatis.mate: debug
+    org.apache: debug

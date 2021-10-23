@@ -49,7 +49,7 @@ mybatis-plus 企业（数据优雅处理）模块
 
 - mybatis-mate-sensitive-words ：请求参数 敏感词 过滤 AC 算法 示例
 
-- mybatis-mate-sharding ：多数据源分库分表（读写分离）数据库健康检查自动切换示例
+- mybatis-mate-sharding ：多数据源分库分表（读写分离）健康检查自动切换示例
 
 - mybatis-mate-sharding-dynamic ：多数据源动态加载卸载示例
 

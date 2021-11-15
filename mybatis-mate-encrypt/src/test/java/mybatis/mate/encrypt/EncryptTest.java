@@ -3,6 +3,7 @@ package mybatis.mate.encrypt;
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import mybatis.mate.encrypt.entity.User;
+import mybatis.mate.encrypt.entity.vo.UserDto;
 import mybatis.mate.encrypt.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.jupiter.api.Order;
@@ -210,5 +211,25 @@ public class EncryptTest {
         System.err.println("签名:\r" + sign);
         boolean status = RSA.verify(encodedData2.getBytes(), publicKey, sign);
         System.err.println("验证结果:\r" + status);
+    }
+
+    /*  --------------------   复杂对象查询加密测试   ---------------------    */
+    @Test
+    @Order(7)
+    public void xmlResultMapList() {
+        List<UserDto> userDtoList = mapper.selectUserDtoList();
+        userDtoList.forEach(u -> {
+            System.err.println("实体加密内容：" + u.getRsa());
+            u.getUserInfos().forEach(t -> System.err.println("关联查询加密内容：" + t.getRsa()));
+            System.err.println("-----------------------------------------");
+        });
+    }
+
+    @Test
+    @Order(7)
+    public void xmlResultMap() {
+        UserDto userDto = mapper.selectUserDto(1001L);
+        System.err.println("实体加密内容：" + userDto.getRsa());
+        userDto.getUserInfos().forEach(t -> System.err.println("关联查询加密内容：" + t.getRsa()));
     }
 }

@@ -247,7 +247,7 @@ public class EncryptTest {
         // 方法参数查看 mybatis.mate.encrypt.config.CustomEncryptor 注释
         String encryptEmail = encryptor.encrypt(algorithm, encryptorProperties.getPassword(), encryptorProperties.getPublicKey(), email, null);
         System.err.println("加密内容：" + encryptEmail);
-        String decryptEmail = encryptor.decrypt(algorithm, encryptorProperties.getPassword(), encryptorProperties.getPublicKey(), encryptEmail, null);
+        String decryptEmail = encryptor.decrypt(algorithm, encryptorProperties.getPassword(), encryptorProperties.getPrivateKey(), encryptEmail, null);
         System.err.println("解密内容：" + decryptEmail);
     }
 }

@@ -2,6 +2,8 @@ package mybatis.mate.encrypt;
 
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import mybatis.mate.annotation.Algorithm;
+import mybatis.mate.config.EncryptorProperties;
 import mybatis.mate.encrypt.entity.User;
 import mybatis.mate.encrypt.entity.vo.UserDto;
 import mybatis.mate.encrypt.mapper.UserMapper;
@@ -27,6 +29,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class EncryptTest {
     @Resource
     private UserMapper mapper;
+    @Resource
+    private EncryptorProperties encryptorProperties;
+    @Resource
+    private IEncryptor encryptor;
 
     @Test
     @Order(1)
@@ -226,10 +232,22 @@ public class EncryptTest {
     }
 
     @Test
-    @Order(7)
+    @Order(8)
     public void xmlResultMap() {
         UserDto userDto = mapper.selectUserDto(1001L);
         System.err.println("实体加密内容：" + userDto.getRsa());
         userDto.getUserInfos().forEach(t -> System.err.println("关联查询加密内容：" + t.getRsa()));
+    }
+
+    @Test
+    @Order(9)
+    public void testEncryptor() throws Exception {
+        final String email = "jobob@qq.com";
+        final Algorithm algorithm = Algorithm.PBEWithMD5AndDES;
+        // 方法参数查看 mybatis.mate.encrypt.config.CustomEncryptor 注释
+        String encryptEmail = encryptor.encrypt(algorithm, encryptorProperties.getPassword(), encryptorProperties.getPublicKey(), email, null);
+        System.err.println("加密内容：" + encryptEmail);
+        String decryptEmail = encryptor.decrypt(algorithm, encryptorProperties.getPassword(), encryptorProperties.getPublicKey(), encryptEmail, null);
+        System.err.println("解密内容：" + decryptEmail);
     }
 }

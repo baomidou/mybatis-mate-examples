@@ -41,12 +41,14 @@ public class EncryptTest {
         user.setId(1L);
         user.setUsername("汤姆凯特");
         user.setPassword("321");
-        user.setEmail("tom@163.com");
+        user.setEmail("邮箱 tom@163.com");
         user.setMd5("123");
         user.setRsa("rsa123");
         assertThat(mapper.insert(user)).isGreaterThan(0);
         System.err.println("插入汤姆凯特加密 password : " + user.getPassword());
         System.err.println("插入汤姆凯特加密 email : " + user.getEmail());
+        User dbUser = mapper.selectById(user.getId());
+        System.err.println("解密上面加密的对象 : " + dbUser.getEmail());
         user.setId(IdWorker.getId());
         user.setUsername("小羊肖恩");
         user.setPassword("123");

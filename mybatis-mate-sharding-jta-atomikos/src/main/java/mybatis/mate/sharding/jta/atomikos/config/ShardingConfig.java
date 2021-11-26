@@ -5,7 +5,6 @@ import mybatis.mate.config.DataSourceProperty;
 import mybatis.mate.provider.AtomikosDataSourceProvider;
 import mybatis.mate.provider.IDataSourceProvider;
 import mybatis.mate.sharding.IShardingProcessor;
-import mybatis.mate.sharding.ShardingHelper;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.postgresql.xa.PGXADataSource;
 import org.springframework.context.annotation.Bean;

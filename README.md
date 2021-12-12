@@ -3,13 +3,16 @@
 #### 介绍
 mybatis-plus 企业（数据优雅处理）模块
 
+> 有些人偷偷破解传播，还有人侵犯授权规则分发，说小了是不尊重开发者劳动成果，说大了是违法侵犯别人软件著作权，
+> 希望营造良好的软件生态，合规渠道获得作者授权，购买正版感谢。
+
 - Spring Boot 引入自动依赖注解包（该包自动会引入 annotation 注解包）
 
 ```
 <dependency>
   <groupId>com.baomidou</groupId>
   <artifactId>mybatis-mate-starter</artifactId>
-  <version>1.0.18</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 
@@ -19,7 +22,7 @@ mybatis-plus 企业（数据优雅处理）模块
 <dependency>
   <groupId>com.baomidou</groupId>
   <artifactId>mybatis-mate-annotation</artifactId>
-  <version>1.0.18</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 

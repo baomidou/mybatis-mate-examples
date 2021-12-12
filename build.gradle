@@ -1,7 +1,7 @@
 // 编译脚本
 buildscript {
     ext {
-        springBootVersion = "2.5.5"
+        springBootVersion = "2.6.1"
         mybatisPlusVersion = "3.4.3.4"
     }
 
@@ -62,10 +62,10 @@ subprojects {
             dependency("com.baomidou:mybatis-plus-core:${mybatisPlusVersion}")
             dependency("com.baomidou:mybatis-plus-extension:${mybatisPlusVersion}")
             dependency("com.github.jsqlparser:jsqlparser:4.2")
-            dependency("org.modelmapper:modelmapper:2.4.4")
+            dependency("org.modelmapper:modelmapper:2.4.5")
             dependency("org.aspectj:aspectjweaver:1.9.7")
             dependency("org.jasypt:jasypt:1.9.3")
-            dependency("org.javers:javers-core:6.2.3")
+            dependency("org.javers:javers-core:6.5.3")
             dependency("com.h2database:h2:1.4.200")
             dependency("org.postgresql:postgresql:42.2.23.jre7")
             dependency("mysql:mysql-connector-java:8.0.26")
@@ -81,7 +81,7 @@ subprojects {
         api("org.slf4j:slf4j-api")
 
 //        api fileTree(dir: "../libs", include: "*.jar")
-        api("com.baomidou:mybatis-mate-starter:1.0.18")
+        api("com.baomidou:mybatis-mate-starter:1.1.0")
 
         api("com.baomidou:mybatis-plus-boot-starter")
         api("org.springframework.boot:spring-boot-starter-web")

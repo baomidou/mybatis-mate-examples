@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * 字段加解密测试
+ * 数据权限测试
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

@@ -11,8 +11,8 @@ spring:
 # Mybatis Mate 配置
 mybatis-mate:
   cert:
-    grant: ☺请添加微信wx153666购买授权，不白嫖从我做起！
-    license: SM/hy2HGmqRZIw7NE5i1vKIiHOQLGXGymokyRCkR+TYuNZuVTdYiESr41OZiYyDkH095+Y5Ifc7tCyVeGi3qrsnyninzgcmvZsUKDl9kQYXzvbt/R7UMj6yqchPsZYf0UQ0mvRyoja1ljXiqbz49qrqXy0q1umWBEzrbH7QjE55M/bnABovM5ljCoENfY2b0EvSaJCUeqeAAxM3K6VrBo0YI4rz9Uo28AXhRgAyaI0QgMy+APM5bCdp9GEXHXYEyApMDvRCqWLfh5WZVdDWD5PZouQL3TKD3kqEf4k+Z1GkrVtHDS9mugpbSP533dHd9O+NF1KpOhkN0lVojrJ21Bg==
+    grant: 请添加微信wx153666购买授权，不白嫖从我做起！
+    license: GTAB70FMrYygsikYe+KxVabILYZ3McTOPYuEwV/mvx0Hp1dJPAwFzs4bUeTTWtbuXg0Ba96AnUHU7VUvkMtX4zraj3gw2ZoWhaIlLVLC/BwdyxPEtZdDufbEInzM8U+7i5BQlQZmHt8xCb5nceIUz3xm8sMZcnVPa1kMB1p/omF4pfEn46uo/Bc9L9QcWOEeqcXkGA1niuemnroueh7FgU8z8z5X+44GAaU9Dyr8TYcJlta8gUDWPYRcbtbayhVQ3e+PAaNJaqsDGSjjesOtybVbYFm7l6NjkdwRxhYYHyJ/WpentSou4uY3oc43XttESkcub/LYtUx60On04IFG/A==
   # 开启数据审计
   audit: true
 

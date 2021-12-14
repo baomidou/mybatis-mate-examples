@@ -3,9 +3,11 @@
 #### 介绍
 mybatis-plus 企业（数据优雅处理）模块
 
-> 有些人偷偷破解传播，还有人侵犯授权规则分发，不尊重开发者劳动成果，违法侵犯别人软件著作权。
-
 > 营造良好的软件生态，合规渠道获得软件作者授权。
+
+
+<img src="https://images.gitee.com/uploads/images/2021/1214/230351_f5027390_12260.png" width="50%" height="50%">
+
 
 - Spring Boot 引入自动依赖注解包（该包自动会引入 annotation 注解包）
 

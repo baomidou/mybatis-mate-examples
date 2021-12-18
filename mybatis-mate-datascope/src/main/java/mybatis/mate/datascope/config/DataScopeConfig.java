@@ -11,7 +11,6 @@ import net.sf.jsqlparser.expression.operators.relational.*;
 import net.sf.jsqlparser.schema.Column;
 import net.sf.jsqlparser.statement.delete.Delete;
 import net.sf.jsqlparser.statement.select.PlainSelect;
-import net.sf.jsqlparser.statement.select.Select;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -89,18 +88,18 @@ public class DataScopeConfig {
                  * 这是删除自定义处理逻辑，插入更新需要限制条件可以参考这里
                  */
                 if (TEST_CLASS.equals(dataScopeProperty.getType())) {
-                    List<DataColumnProperty> dataColumns = dataScopeProperty.getColumns();
-                    for (DataColumnProperty dataColumn : dataColumns) {
-                        if ("department_id".equals(dataColumn.getName())) {
-                            processStatements(args, mappedStatement, (statement, index) -> {
-                                Delete delete = (Delete) statement;
+                    processStatements(args, mappedStatement, (statement, index) -> {
+                        Delete delete = (Delete) statement;
+                        List<DataColumnProperty> dataColumns = dataScopeProperty.getColumns();
+                        for (DataColumnProperty dataColumn : dataColumns) {
+                            if ("department_id".equals(dataColumn.getName())) {
                                 EqualsTo equalsTo = new EqualsTo();
                                 equalsTo.setLeftExpression(new Column(dataColumn.getAliasDotName()));
                                 equalsTo.setRightExpression(new StringValue("1"));
                                 delete.setWhere(new AndExpression(delete.getWhere(), equalsTo));
-                            });
+                            }
                         }
-                    }
+                    });
                 }
             }
 

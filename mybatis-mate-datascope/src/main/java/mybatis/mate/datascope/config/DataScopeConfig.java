@@ -7,12 +7,12 @@ import mybatis.mate.datascope.IDataScopeProvider;
 import net.sf.jsqlparser.expression.Parenthesis;
 import net.sf.jsqlparser.expression.StringValue;
 import net.sf.jsqlparser.expression.operators.conditional.AndExpression;
-import net.sf.jsqlparser.expression.operators.relational.ExpressionList;
-import net.sf.jsqlparser.expression.operators.relational.InExpression;
-import net.sf.jsqlparser.expression.operators.relational.ItemsList;
-import net.sf.jsqlparser.expression.operators.relational.LikeExpression;
+import net.sf.jsqlparser.expression.operators.relational.*;
 import net.sf.jsqlparser.schema.Column;
+import net.sf.jsqlparser.statement.delete.Delete;
 import net.sf.jsqlparser.statement.select.PlainSelect;
+import net.sf.jsqlparser.statement.select.Select;
+import org.apache.ibatis.mapping.MappedStatement;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -21,10 +21,16 @@ import java.util.List;
 
 @Configuration
 public class DataScopeConfig {
+    public final static String TEST = "test";
+    public final static String TEST_CLASS = "testClass";
 
     @Bean
     public IDataScopeProvider dataScopeProvider() {
         return new AbstractDataScopeProvider() {
+
+            /**
+             * 这里是 Select 查询 Where 条件
+             */
             @Override
             public void setWhere(PlainSelect plainSelect, Object[] args, DataScopeProperty dataScopeProperty) {
                 // args 中包含 mapper 方法的请求参数，需要使用可以自行获取
@@ -33,7 +39,7 @@ public class DataScopeConfig {
                     SELECT u.* FROM user u WHERE (u.department_id IN ('1', '2', '3', '5'))
                     AND u.mobile LIKE '%1533%'
                  */
-                if ("test".equals(dataScopeProperty.getType())) {
+                if (TEST.equals(dataScopeProperty.getType())) {
                     // 业务 test 类型
                     List<DataColumnProperty> dataColumns = dataScopeProperty.getColumns();
                     for (DataColumnProperty dataColumn : dataColumns) {
@@ -70,6 +76,37 @@ public class DataScopeConfig {
 //                        e.printStackTrace();
 //                    }
                 }
+            }
+
+            @Override
+            public void processInsert(Object[] args, MappedStatement mappedStatement, DataScopeProperty dataScopeProperty) {
+                System.err.println("------------------  执行【插入】你可以干点什么");
+            }
+
+            @Override
+            public void processDelete(Object[] args, MappedStatement mappedStatement, DataScopeProperty dataScopeProperty) {
+                /**
+                 * 这是删除自定义处理逻辑，插入更新需要限制条件可以参考这里
+                 */
+                if (TEST_CLASS.equals(dataScopeProperty.getType())) {
+                    List<DataColumnProperty> dataColumns = dataScopeProperty.getColumns();
+                    for (DataColumnProperty dataColumn : dataColumns) {
+                        if ("department_id".equals(dataColumn.getName())) {
+                            processStatements(args, mappedStatement, (statement, index) -> {
+                                Delete delete = (Delete) statement;
+                                EqualsTo equalsTo = new EqualsTo();
+                                equalsTo.setLeftExpression(new Column(dataColumn.getAliasDotName()));
+                                equalsTo.setRightExpression(new StringValue("1"));
+                                delete.setWhere(new AndExpression(delete.getWhere(), equalsTo));
+                            });
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void processUpdate(Object[] args, MappedStatement mappedStatement, DataScopeProperty dataScopeProperty) {
+                System.err.println("------------------  执行【更新】 你可以干点什么");
             }
         };
     }

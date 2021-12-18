@@ -16,7 +16,10 @@ public class UserService {
         Page page = new Page<User>(1, 20);
         userMapper.selectTestList(page, 1L, "Jack").forEach(System.out::println);
         // 观察 sql 变化这个方法没有注解权限
-        userMapper.selectById(1L);
-        userMapper.deleteById(2L);
+        User user = userMapper.selectById(1L);
+        user.setUsername("abc");
+        userMapper.updateById(user);
+        userMapper.insert(new User(6L, 1L, "hello", "15315336667"));
+        userMapper.deleteById(6L);
     }
 }

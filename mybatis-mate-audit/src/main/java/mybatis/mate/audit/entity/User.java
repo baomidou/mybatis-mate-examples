@@ -5,6 +5,8 @@ import lombok.Setter;
 import lombok.ToString;
 import org.javers.core.metamodel.annotation.PropertyName;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @ToString
@@ -15,5 +17,7 @@ public class User {
     @PropertyName("手机号码")
     private String mobile;
     private String email;
+    private BigDecimal wallet;
+    private BigDecimal amount;
 
 }

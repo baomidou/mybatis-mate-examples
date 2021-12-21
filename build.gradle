@@ -67,7 +67,7 @@ subprojects {
             dependency("org.jasypt:jasypt:1.9.3")
             dependency("org.javers:javers-core:6.5.3")
             dependency("com.h2database:h2:1.4.200")
-            dependency("org.postgresql:postgresql:42.2.23.jre7")
+            dependency("org.postgresql:postgresql:42.3.1")
             dependency("mysql:mysql-connector-java:8.0.26")
             // 编译测试
             dependency("javax.servlet:javax.servlet-api:3.1.0")

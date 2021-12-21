@@ -16,6 +16,7 @@ libs/
 /logs/
 **/contiperf-report/
 **/build/
+**/target/
 .gradle/
 .idea/
 .settings/

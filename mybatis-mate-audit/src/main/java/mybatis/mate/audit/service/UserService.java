@@ -5,7 +5,6 @@ import mybatis.mate.audit.entity.User;
 import mybatis.mate.audit.mapper.UserMapper;
 import org.javers.core.diff.Change;
 import org.javers.core.diff.changetype.ValueChange;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

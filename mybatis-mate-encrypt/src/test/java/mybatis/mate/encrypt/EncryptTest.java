@@ -47,6 +47,14 @@ public class EncryptTest {
         assertThat(mapper.insert(user)).isGreaterThan(0);
         System.err.println("插入汤姆凯特加密 password : " + user.getPassword());
         System.err.println("插入汤姆凯特加密 email : " + user.getEmail());
+
+        // 测试 wrapper
+        User testWrapperUser = mapper.selectOne(Wrappers.<User>lambdaQuery().eq(User::getId, user.getId()));
+        assertThat(testWrapperUser.getPassword()).isEqualTo("321");
+        assertThat(testWrapperUser.getEmail()).isEqualTo("邮箱 tom@163.com");
+        System.out.println("解密密码 : " + testWrapperUser.getPassword());
+        System.out.println("解密邮箱 : " + testWrapperUser.getEmail());
+
         User dbUser = mapper.selectById(user.getId());
         System.err.println("解密上面加密的对象 : " + dbUser.getEmail());
         user.setId(IdWorker.getId());

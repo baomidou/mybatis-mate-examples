@@ -1,8 +1,8 @@
 // 编译脚本
 buildscript {
     ext {
-        springBootVersion = "2.6.1"
-        mybatisPlusVersion = "3.4.3.4"
+        springBootVersion = "2.6.2"
+        mybatisPlusVersion = "3.5.0"
     }
 
     // 仓库配置

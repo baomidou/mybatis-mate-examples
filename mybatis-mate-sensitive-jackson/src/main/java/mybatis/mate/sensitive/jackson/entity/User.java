@@ -13,14 +13,14 @@ public class User {
     /**
      * 这里是一个自定义的策略 {@link SensitiveStrategyConfig} 初始化注入
      */
-    @FieldSensitive(type = "testStrategy")
+    @FieldSensitive("testStrategy")
     private String username;
     /**
      * 默认支持策略 {@link SensitiveType }
      */
-    @FieldSensitive(type = SensitiveType.mobile)
+    @FieldSensitive(SensitiveType.mobile)
     private String mobile;
-    @FieldSensitive(type = SensitiveType.email)
+    @FieldSensitive(SensitiveType.email)
     private String email;
 
 }

@@ -47,6 +47,8 @@ mybatis-plus 企业（数据优雅处理）模块
 
 - mybatis-mate-encrypt-sm2-sm3-sm4 ：国密 sm2 sm3 sm4 加密算法示例
 
+- mybatis-mate-jsonbind ：返回 json 数据动态绑定虚拟属性 示例
+
 - mybatis-mate-sensitive-jackson ：字段脱敏 jackson 实现示例
 
 - mybatis-mate-sensitive-words ：请求参数 敏感词 过滤 AC 算法 示例

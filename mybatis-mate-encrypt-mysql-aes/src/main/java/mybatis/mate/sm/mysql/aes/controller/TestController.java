@@ -27,7 +27,7 @@ public class TestController {
         }
         System.err.println(comAttr);
         //输出的attrTitle属性性为解密后的
-        return new HashMap<String, Object>() {{
+        return new HashMap<String, Object>(2) {{
             put("dbList", comAttrMapper.selectList(null));
             put("voList", comAttrMapper.selectVO());
         }};

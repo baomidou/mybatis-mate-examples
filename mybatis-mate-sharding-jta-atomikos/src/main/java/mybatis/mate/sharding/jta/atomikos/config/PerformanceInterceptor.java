@@ -301,7 +301,7 @@ public class PerformanceInterceptor implements Interceptor {
                     lcToken = token.toLowerCase(Locale.ROOT);
 
                     if ("'".equals(token)) {
-                        String t = StringUtils.EMPTY;
+                        String t = "";
                         do {
                             try {
                                 t = tokens.nextToken();

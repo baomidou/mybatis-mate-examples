@@ -65,8 +65,8 @@ public class DataScopeConfig {
                             likeExpression.setRightExpression(new StringValue("%1533%"));
                             plainSelect.setWhere(new AndExpression(plainSelect.getWhere(), likeExpression));
                         }
-
                     }
+
                     // SQL 解析写法
 //                    try {
 //                        Expression selectExpression = CCJSqlParserUtil.parseCondExpression("username='333'", true);
@@ -74,6 +74,10 @@ public class DataScopeConfig {
 //                    } catch (Exception e) {
 //                        e.printStackTrace();
 //                    }
+                }
+
+                else if (TEST_CLASS.equals(dataScopeProperty.getType())) {
+                    System.err.println("----------------使用类注解权限----------------");
                 }
             }
 

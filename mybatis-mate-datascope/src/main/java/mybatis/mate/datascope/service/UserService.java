@@ -13,13 +13,24 @@ public class UserService {
     private UserMapper userMapper;
 
     public void dataScope() {
+        System.err.println("----- selectList ---- 使用类注解 ");
+        userMapper.selectList(null).forEach(System.out::println);
+
+        System.err.println("----- 自定义方法 selectTestList ---- 使用方法注解 ");
         Page page = new Page<User>(1, 20);
         userMapper.selectTestList(page, 1L, "Jack").forEach(System.out::println);
+
         // 观察 sql 变化这个方法没有注解权限，使用类注解
         User user = userMapper.selectById(1L);
         user.setUsername("abc");
+
+        // 执行 processUpdate 方法
         userMapper.updateById(user);
+
+        // 执行 processInsert 方法
         userMapper.insert(new User(6L, 1L, "hello", "15315336667"));
+
+        // 执行 processDelete 方法
         userMapper.deleteById(6L);
     }
 }

@@ -29,6 +29,19 @@ public interface UserMapper extends BaseMapper<User> {
     @Select("select u.* from user u")
     List<User> selectTestList(IPage<User> page, Long id, @Param("name") String username);
 
+    @DataScope(type = DataScopeConfig.TEST, value = {
+            @DataColumn(alias = "u", name = "department_id"),
+            @DataColumn(alias = "u", name = "mobile")
+    })
+    @Select("select u.* from user u join department d on u.department_id = d.id")
+    List<User> selectTestJoin(IPage<User> page, Long id, @Param("name") String username);
+
+    @DataScope(type = DataScopeConfig.TEST, value = {
+            @DataColumn(alias = "u", name = "department_id"),
+            @DataColumn(alias = "u", name = "mobile")
+    })
+    List<User> selectDeptNamesByUserIds(@Param("userIds") List<Long> userIds, @Param("username") String username);
+
     // 忽略某个方法
     // @DataScope(ignore = true)
 }

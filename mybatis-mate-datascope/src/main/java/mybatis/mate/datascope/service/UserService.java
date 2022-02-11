@@ -6,6 +6,7 @@ import mybatis.mate.datascope.mapper.UserMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
 
 @Service
 public class UserService {
@@ -20,6 +21,8 @@ public class UserService {
         Page page = new Page<User>(1, 20);
         userMapper.selectTestList(page, 1L, "Jack").forEach(System.out::println);
 
+        userMapper.selectTestJoin(page, 1L, "Jack").forEach(System.out::println);
+
         // 观察 sql 变化这个方法没有注解权限，使用类注解
         User user = userMapper.selectById(1L);
         user.setUsername("abc");
@@ -32,5 +35,8 @@ public class UserService {
 
         // 执行 processDelete 方法
         userMapper.deleteById(6L);
+
+        // xml sql
+        userMapper.selectDeptNamesByUserIds(Arrays.asList(1L, 2L, 3L, 5L), "o").forEach(System.out::println);
     }
 }

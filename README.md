@@ -11,7 +11,7 @@ mybatis-plus 企业（数据优雅处理）模块
 <dependency>
   <groupId>com.baomidou</groupId>
   <artifactId>mybatis-mate-starter</artifactId>
-  <version>1.1.3</version>
+  <version>1.2.0</version>
 </dependency>
 ```
 
@@ -21,7 +21,7 @@ mybatis-plus 企业（数据优雅处理）模块
 <dependency>
   <groupId>com.baomidou</groupId>
   <artifactId>mybatis-mate-annotation</artifactId>
-  <version>1.1.3</version>
+  <version>1.2.0</version>
 </dependency>
 ```
 
@@ -55,7 +55,7 @@ mybatis-plus 企业（数据优雅处理）模块
 
 - mybatis-mate-sharding ：多数据源分库分表（读写分离）健康检查自动切换示例
 
-- mybatis-mate-sharding-dynamic ：多数据源动态加载卸载示例
+- mybatis-mate-sharding-dynamic ：多数据源动态加载卸载示例（代码初始化数据源）
 
 - mybatis-mate-sharding-jta-atomikos ：多数据源事务（ jta atomikos）示例
 

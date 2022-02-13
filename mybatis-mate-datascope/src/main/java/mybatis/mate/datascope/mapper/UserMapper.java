@@ -42,6 +42,14 @@ public interface UserMapper extends BaseMapper<User> {
     })
     List<User> selectDeptNamesByUserIds(@Param("userIds") List<Long> userIds, @Param("username") String username);
 
-    // 忽略某个方法
-    // @DataScope(ignore = true)
+    /**
+     * 忽略某个方法
+     */
+    @DataScope(ignore = true)
+    List<User> selectTestIgnoreDataScope(@Param("userIds") List<Long> userIds, @Param("username") String username);
+
+    /**
+     * 使用类注解
+     */
+    List<User> selectTestXmlSql(@Param("userIds") List<Long> userIds, @Param("username") String username);
 }

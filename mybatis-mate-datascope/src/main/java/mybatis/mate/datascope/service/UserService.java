@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -36,7 +37,16 @@ public class UserService {
         // 执行 processDelete 方法
         userMapper.deleteById(6L);
 
+        List<Long> ids = Arrays.asList(1L, 2L, 3L, 5L);
+
         // xml sql
-        userMapper.selectDeptNamesByUserIds(Arrays.asList(1L, 2L, 3L, 5L), "o").forEach(System.out::println);
+        userMapper.selectDeptNamesByUserIds(ids, "o").forEach(System.out::println);
+
+        // ignore dataScope
+        userMapper.selectTestIgnoreDataScope(ids, "o").forEach(System.out::println);
+
+        // use mapper dataScope
+        userMapper.selectTestXmlSql(ids, "o").forEach(System.out::println);
+
     }
 }

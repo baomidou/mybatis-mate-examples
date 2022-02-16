@@ -13,7 +13,7 @@ mybatis-mate:
   cert:
     # 请添加微信wx153666购买授权，不白嫖从我做起！ 测试证书会失效，请勿正式环境使用
     grant: thisIsTestLicense
-    license: as/bsBaSVrsA9FfjC/N77ruEt2/QZDrW+MHETNuEuZBra5mlaXZU+DE1ZvF8UjzlLCpH3TFVH3WPV+Ya7Ugiz1Rx4wSh/FK6Ug9lhos7rnsNaRB/+mR30aXqtlLt4dAmLAOCT56r9mikW+t1DDJY8TVhERWMjEipbqGO9oe1fqYCegCEX8tVCpToKr5J1g1V86mNsNnEGXujnLlEw9jBTrGxAyQroD7Ns1Dhwz1K4Y188mvmRQp9t7OYrpgsC7N9CXq1s1c2GtvfItHArkqHE4oDrhaPjpbMjFWLI5/XqZDtW3D+AVcH7pTcYZn6vzFfDZEmfDFV5fQlT3Rc+GENEg==
+    license: bGVwxDOPMZMe5CJ2F8Wk0rXTBEu2dxtf606xLkujp4Iasu3RZbAPMiSHcoZsLJgBsgYmRSTeftIjBeHMwMGl+H5AUapa2AHfIFB/6WMHJsfTKETwnew5Wmhg/YRJnzCz4RxV4omJQ1Y35xdaLRmu0+eQjLFP8pjus1GrJq+h6CfP5VZJGzWYVaUfl6Z79+9mIiv5n9iDDvyL9us91NU5kkIr+Th8K/dzmsc/FtOMCT0+2wgL/tdZsC3Vt7jVsk9+9HaQYIFWrLEyB0yVAiwu3UKeZQ8Uc3AjMldzbozCuu8BmPAMrT5tIpACTuISfIXiI8lJIIEC2TqiEvCdyZf9sg==
   # 开启数据审计
   audit: true
 

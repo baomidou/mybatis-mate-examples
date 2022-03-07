@@ -1,0 +1,24 @@
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@xxx:1521:htxx
+    username: zhgj
+    password: zhgj
+
+
+# Mybatis Mate 配置
+mybatis-mate:
+  cert:
+    # 请添加微信wx153666购买授权，不白嫖从我做起！ 测试证书会失效，请勿正式环境使用
+    grant: thisIsTestLicense
+    license: bGVwxDOPMZMe5CJ2F8Wk0rXTBEu2dxtf606xLkujp4Iasu3RZbAPMiSHcoZsLJgBsgYmRSTeftIjBeHMwMGl+H5AUapa2AHfIFB/6WMHJsfTKETwnew5Wmhg/YRJnzCz4RxV4omJQ1Y35xdaLRmu0+eQjLFP8pjus1GrJq+h6CfP5VZJGzWYVaUfl6Z79+9mIiv5n9iDDvyL9us91NU5kkIr+Th8K/dzmsc/FtOMCT0+2wgL/tdZsC3Vt7jVsk9+9HaQYIFWrLEyB0yVAiwu3UKeZQ8Uc3AjMldzbozCuu8BmPAMrT5tIpACTuISfIXiI8lJIIEC2TqiEvCdyZf9sg==
+
+mybatis-plus:
+  configuration:
+    jdbc-type-for-null: 'null'
+
+# Logger Config
+logging:
+  level:
+    mybatis.mate: debug

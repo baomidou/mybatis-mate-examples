@@ -10,7 +10,6 @@
 # ignore direcoties
 transaction-logs
 tmlog*
-libs/
 /c:/
 **/out/**
 /logs/

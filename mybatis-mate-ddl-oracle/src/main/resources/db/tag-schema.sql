@@ -1,8 +1,8 @@
 -- ----------------------------
--- Table structure for tag
+-- Table structure for "ZHGJ"."TAG"
 -- ----------------------------
-DROP TABLE "JINAN"."tag";
-CREATE TABLE "JINAN"."tag" (
+-- DROP TABLE "ZHGJ"."TAG";
+CREATE TABLE "ZHGJ"."TAG" (
                                "id" NUMBER(20,0) VISIBLE NOT NULL,
                                "name" NVARCHAR2(30) VISIBLE NOT NULL,
                                "type" NUMBER(6,0) VISIBLE
@@ -22,7 +22,7 @@ PARALLEL 1
 NOCACHE
 DISABLE ROW MOVEMENT
 ;
-COMMENT ON COLUMN "JINAN"."tag"."id" IS '主键 ID';
-COMMENT ON COLUMN "JINAN"."tag"."name" IS '名称';
-COMMENT ON COLUMN "JINAN"."tag"."type" IS '类别';
-COMMENT ON TABLE "JINAN"."tag" IS '标签';
+COMMENT ON COLUMN "ZHGJ"."TAG"."id" IS '主键 ID';
+COMMENT ON COLUMN "ZHGJ"."TAG"."name" IS '名称';
+COMMENT ON COLUMN "ZHGJ"."TAG"."type" IS '类别';
+COMMENT ON TABLE "ZHGJ"."TAG" IS '标签';

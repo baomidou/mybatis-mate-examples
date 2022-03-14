@@ -1,6 +1,5 @@
 package mybatis.mate.ddl.mysql;
 
-import mybatis.mate.ddl.IDdlGenerator;
 import mybatis.mate.ddl.SimpleDdl;
 import org.springframework.stereotype.Component;
 
@@ -10,11 +9,6 @@ import java.util.List;
 @Component
 public class OracleDdl extends SimpleDdl {
 
-    @Override
-    public IDdlGenerator getDdlGenerator() {
-        return new OracleDdlGenerator();
-    }
-
     /**
      * 执行 SQL 脚本方式
      */
@@ -23,9 +17,7 @@ public class OracleDdl extends SimpleDdl {
         return Arrays.asList(
                 // 内置包方式
                 "db/tag-schema.sql",
-
-                // 文件绝对路径方式（修改为你电脑的地址）
-                "D:\\IdeaProjects\\mybatis-mate-examples\\mybatis-mate-ddl-mysql\\src\\main\\resources\\db\\tag-data.sql"
+                "db/tag-data.sql"
         );
     }
 }

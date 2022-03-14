@@ -5,16 +5,16 @@ mybatis-mate:
     grant: thisIsTestLicense
     license: bGVwxDOPMZMe5CJ2F8Wk0rXTBEu2dxtf606xLkujp4Iasu3RZbAPMiSHcoZsLJgBsgYmRSTeftIjBeHMwMGl+H5AUapa2AHfIFB/6WMHJsfTKETwnew5Wmhg/YRJnzCz4RxV4omJQ1Y35xdaLRmu0+eQjLFP8pjus1GrJq+h6CfP5VZJGzWYVaUfl6Z79+9mIiv5n9iDDvyL9us91NU5kkIr+Th8K/dzmsc/FtOMCT0+2wgL/tdZsC3Vt7jVsk9+9HaQYIFWrLEyB0yVAiwu3UKeZQ8Uc3AjMldzbozCuu8BmPAMrT5tIpACTuISfIXiI8lJIIEC2TqiEvCdyZf9sg==
 # 采用代码初始化，这里注释即可，需要健康检测启动的时候需要配置 yml 初始化数据源
-#  sharding:
+  sharding:
 #    health: true # 健康检测
-#    primary: mysql # 默认选择数据源
-#    datasource:
-#      mysql:
-#        - key: t1
-#          driver-class-name: com.mysql.cj.jdbc.Driver
-#          url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
-#          username: root
-#          schema: test
+    primary: mysql # 默认选择数据源
+    datasource:
+      mysql:
+        - key: t1
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+          username: root
+          schema: test
 
 # 允许bean定义重写
 spring:

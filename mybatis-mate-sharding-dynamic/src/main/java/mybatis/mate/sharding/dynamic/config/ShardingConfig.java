@@ -31,8 +31,8 @@ public class ShardingConfig {
     /**
      * 这里是代码初始化数据源方式
      */
-    @Primary
-    @Bean(name = "dataSource")
+//    @Primary
+//    @Bean(name = "dataSource")
     public ShardingDatasource shardingDatasource(IDataSourceProvider dataSourceProvider, ShardingProperties shardingProperties) {
         shardingProperties.setPrimary("mysql");
         DataSourceProperty mysqlT1 = new DataSourceProperty();

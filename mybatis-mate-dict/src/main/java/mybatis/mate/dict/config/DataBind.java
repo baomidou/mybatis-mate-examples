@@ -2,15 +2,20 @@ package mybatis.mate.dict.config;
 
 import mybatis.mate.annotation.FieldBind;
 import mybatis.mate.dict.entity.StatusEnum;
+import mybatis.mate.dict.mapper.UserMapper;
 import mybatis.mate.sets.IDataBind;
 import org.apache.ibatis.reflection.MetaObject;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
 public class DataBind implements IDataBind {
+    @Resource
+    private ApplicationContext applicationContext;
 
     /**
      * 从数据库或缓存中获取
@@ -31,6 +36,11 @@ public class DataBind implements IDataBind {
      */
     @Override
     public void setMetaObject(FieldBind fieldBind, Object fieldValue, MetaObject metaObject) {
+
+        // 调用数据库获取数据，这里采用 getBean 方式避免 spring boot 检查循环依赖问题
+        Long userCount = applicationContext.getBean(UserMapper.class).selectCount(null);
+        System.out.println("userCount=" + userCount);
+
         System.err.println("字段类型：" + fieldBind.type() + "，绑定属性值：" + fieldValue);
         // 数据库中数据转换
         if (BindType.USER_SEX.equals(fieldBind.type())) {

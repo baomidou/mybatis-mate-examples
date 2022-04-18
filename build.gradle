@@ -80,7 +80,7 @@ subprojects {
         // 日志
         api("org.slf4j:slf4j-api")
 
-        api("com.baomidou:mybatis-mate-starter:1.2.3")
+        api("com.baomidou:mybatis-mate-starter:1.2.4")
 
         api("com.baomidou:mybatis-plus-boot-starter")
         api("org.springframework.boot:spring-boot-starter-web")

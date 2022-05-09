@@ -3,18 +3,13 @@ package mybatis.mate.sensitivewords.config;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
 import mybatis.mate.params.IParamsProcessor;
-import mybatis.mate.params.ParamsJsonDeserializer;
 import mybatis.mate.params.SensitiveWordsProcessor;
 import mybatis.mate.sensitivewords.entity.SensitiveWords;
 import mybatis.mate.sensitivewords.mapper.SensitiveWordsMapper;
 import org.ahocorasick.trie.Emit;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 
 import javax.annotation.Resource;
 import java.util.Collection;
@@ -65,17 +60,22 @@ public class ParamsConfig {
         };
     }
 
-    @Bean
-    @Primary
-    public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter(IParamsProcessor paramsProcessor) {
-        SimpleModule module = new SimpleModule();
-        // 注入 json 参数反序列化器 ParamsJsonDeserializer
-        module.addDeserializer(String.class, new ParamsJsonDeserializer(paramsProcessor));
-        // 注册解析器
-        ObjectMapper objectMapper = Jackson2ObjectMapperBuilder.json().build();
-        objectMapper.registerModule(module);
-        return new MappingJackson2HttpMessageConverter(objectMapper);
-    }
+//    @Bean
+//    public SensitiveRequestBodyAdvice sensitiveRequestBodyAdvice(IParamsProcessor paramsProcessor) {
+//        return new SensitiveRequestBodyAdvice(paramsProcessor);
+//    }
+
+//    @Bean
+//    @Primary
+//    public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter(IParamsProcessor paramsProcessor) {
+//        SimpleModule module = new SimpleModule();
+//        // 注入 json 参数反序列化器 ParamsJsonDeserializer
+//        module.addDeserializer(String.class, new ParamsJsonDeserializer(paramsProcessor));
+//        // 注册解析器
+//        ObjectMapper objectMapper = Jackson2ObjectMapperBuilder.json().build();
+//        objectMapper.registerModule(module);
+//        return new MappingJackson2HttpMessageConverter(objectMapper);
+//    }
 
     private static ObjectMapper OBJECT_MAPPER;
 

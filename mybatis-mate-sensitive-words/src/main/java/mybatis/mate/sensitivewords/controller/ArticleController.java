@@ -3,6 +3,7 @@ package mybatis.mate.sensitivewords.controller;
 import mybatis.mate.params.SensitiveWordsProcessor;
 import mybatis.mate.sensitivewords.config.ParamsConfig;
 import mybatis.mate.sensitivewords.entity.Article;
+import mybatis.mate.sensitivewords.entity.ArticleNoneSensitive;
 import mybatis.mate.sensitivewords.entity.SensitiveWords;
 import mybatis.mate.sensitivewords.mapper.SensitiveWordsMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ public class ArticleController {
 
 
     // 添加一个敏感词然后再去观察是否生效 http://localhost:8080/add
-    // 观察【猫】这个词被过滤了 http://localhost:8080/info?content=%E7%8E%8B%E5%AE%89%E7%9F%B3%E6%9C%89%E4%B8%80%E5%8F%AA%E7%8C%ABtomcat%E6%B1%A4%E5%A7%86%E5%87%AF%E7%89%B9&see=1&size=6
+    // 观察【猫】这个词被过滤了 http://localhost:8080/add?content=%E7%8E%8B%E5%AE%89%E7%9F%B3%E6%9C%89%E4%B8%80%E5%8F%AA%E7%8C%ABtomcat%E6%B1%A4%E5%A7%86%E5%87%AF%E7%89%B9&see=1&size=6
     // 嵌套敏感词处理 http://localhost:8080/info?content=%E7%8E%8B%E7%8C%AB%E5%AE%89%E7%9F%B3%E6%9C%89%E4%B8%80%E5%8F%AA%E7%8C%ABtomcat%E6%B1%A4%E5%A7%86%E5%87%AF%E7%89%B9&see=1&size=6
     // 多层嵌套敏感词 http://localhost:8080/info?content=%E7%8E%8B%E7%8E%8B%E7%8C%AB%E5%AE%89%E7%9F%B3%E5%AE%89%E7%9F%B3%E6%9C%89%E4%B8%80%E5%8F%AA%E7%8C%ABtomcat%E6%B1%A4%E5%A7%86%E5%87%AF%E7%89%B9&see=1&size=6
     @GetMapping("/add")
@@ -50,6 +51,12 @@ public class ArticleController {
     // idea 执行 resources 目录 TestJson.http 文件测试
     @PostMapping("/json")
     public String json(@RequestBody Article article) throws Exception {
+        return ParamsConfig.toJson(article);
+    }
+
+    // 这里未实现 Sensitived 接口 SensitiveRequestBodyAdvice 不调用脱敏
+    @PostMapping("/test")
+    public String test(@RequestBody ArticleNoneSensitive article) throws Exception {
         return ParamsConfig.toJson(article);
     }
 }

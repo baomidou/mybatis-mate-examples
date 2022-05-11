@@ -2,7 +2,6 @@ package mybatis.mate.sensitivewords.config;
 
 import lombok.extern.slf4j.Slf4j;
 import mybatis.mate.params.IParamsProcessor;
-import mybatis.mate.toolkit.MpmConstants;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.HttpInputMessage;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -46,7 +45,7 @@ public class SensitiveRequestBodyAdvice extends RequestBodyAdviceAdapter {
                                            Class<? extends HttpMessageConverter<?>> converterType) {
         try {
             String content = StreamUtils.copyToString(inputMessage.getBody(), StandardCharsets.UTF_8);
-            ByteArrayInputStream inputStream = new ByteArrayInputStream(paramsProcessor.execute(MpmConstants.JSON,
+            ByteArrayInputStream inputStream = new ByteArrayInputStream(paramsProcessor.execute("json",
                     content).getBytes(StandardCharsets.UTF_8));
             return new MappingJacksonInputMessage(inputStream, inputMessage.getHeaders());
         } catch (IOException e) {

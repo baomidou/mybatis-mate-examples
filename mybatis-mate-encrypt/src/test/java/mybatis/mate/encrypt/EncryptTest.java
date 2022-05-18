@@ -8,6 +8,7 @@ import mybatis.mate.encrypt.entity.User;
 import mybatis.mate.encrypt.entity.vo.UserDto;
 import mybatis.mate.encrypt.mapper.UserMapper;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -259,5 +260,24 @@ public class EncryptTest {
         System.err.println("加密内容：" + encryptEmail);
         String decryptEmail = encryptor.decrypt(algorithm, encryptorProperties.getPassword(), encryptorProperties.getPrivateKey(), encryptEmail, null);
         System.err.println("解密内容：" + decryptEmail);
+    }
+
+    @Test
+    @Order(9)
+    public void testEmpty() throws Exception {
+        // 测试空及空白字符串加密
+        User user = new User();
+        user.setId(3L);
+        user.setUsername("安吉拉");
+        user.setPassword(" ");
+        user.setMd5(" ");
+        user.setRsa("");
+        assertThat(mapper.insert(user)).isGreaterThan(0);
+        User dbUser = mapper.selectById(3L);
+        // 不能直接用 user 里面值判断，因为已经加密回写了
+        Assertions.assertEquals(" ", dbUser.getPassword());
+        // MD5 是不可逆的，匹配密文
+        Assertions.assertEquals(encryptor.encrypt(Algorithm.MD5_32, null, null, " ", null), dbUser.getMd5());
+        Assertions.assertEquals("", dbUser.getRsa());
     }
 }

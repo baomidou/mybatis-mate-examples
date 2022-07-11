@@ -33,6 +33,17 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
+# 配置健康检查
+management:
+  endpoint:
+    health:
+      show-details: always
+  health:
+    defaults:
+      enabled: false
+    db:
+      enabled: true
+
 # Logger Config
 logging:
   level:

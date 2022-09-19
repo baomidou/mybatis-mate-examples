@@ -1,5 +1,6 @@
 package mybatis.mate.datascope.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import mybatis.mate.datascope.entity.User;
 import mybatis.mate.datascope.mapper.UserMapper;
@@ -48,5 +49,7 @@ public class UserService {
         // use mapper dataScope
         userMapper.selectTestXmlSql(ids, "o").forEach(System.out::println);
 
+        IPage<User> userPage = userMapper.page(Page.of(1, 10), "153");
+        System.out.println("total=" + userPage.getTotal());
     }
 }

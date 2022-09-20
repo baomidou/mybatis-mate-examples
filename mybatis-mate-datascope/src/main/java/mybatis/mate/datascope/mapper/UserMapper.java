@@ -1,7 +1,9 @@
 package mybatis.mate.datascope.mapper;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.Constants;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import mybatis.mate.annotation.DataColumn;
 import mybatis.mate.annotation.DataScope;
@@ -54,8 +56,11 @@ public interface UserMapper extends BaseMapper<User> {
      */
     List<User> selectTestXmlSql(@Param("userIds") List<Long> userIds, @Param("username") String username);
 
-    @DataScope
     default IPage<User> page(IPage<User> page, String mobile) {
         return selectPage(page, Wrappers.<User>lambdaQuery().likeRight(User::getMobile, mobile));
     }
+
+    @DataScope(type = "def")
+    @Override
+    <P extends IPage<User>> P selectPage(P page, @Param(Constants.WRAPPER) Wrapper<User> queryWrapper);
 }

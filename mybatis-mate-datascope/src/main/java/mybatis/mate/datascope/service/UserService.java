@@ -15,6 +15,11 @@ public class UserService {
     @Resource
     private UserMapper userMapper;
 
+    public void dataScopeDefaultMethod() {
+        IPage<User> userPage = userMapper.page(Page.of(1, 10), "153");
+        System.out.println("total=" + userPage.getTotal());
+    }
+
     public void dataScope() {
         System.err.println("----- selectList ---- 使用类注解 ");
         userMapper.selectList(null).forEach(System.out::println);

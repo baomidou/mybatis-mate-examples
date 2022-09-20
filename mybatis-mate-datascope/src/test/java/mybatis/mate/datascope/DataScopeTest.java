@@ -21,4 +21,10 @@ public class DataScopeTest {
         // 查看控制台，输出执行 sql 语句
         userService.dataScope();
     }
+
+    @Test
+    public void testDefault() {
+        // default 方法无法拦截，可以通过重写父类方法间接解决
+        userService.dataScopeDefaultMethod();
+    }
 }

@@ -1,6 +1,5 @@
 package mybatis.mate.encrypt.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import mybatis.mate.encrypt.config.SpiceBaseMapper;
 import mybatis.mate.encrypt.entity.User;
 import mybatis.mate.encrypt.entity.vo.UserDto;

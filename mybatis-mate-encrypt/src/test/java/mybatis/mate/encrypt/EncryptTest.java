@@ -95,11 +95,15 @@ public class EncryptTest {
 
         // 批量插入
         System.err.println("------- 批量 XML 插入 -------");
-        mapper.insertBatchTest(userList);
+//        mapper.insertBatchTest(userList);
+        mapper.insertBatchSomeColumn(userList);
+        userList.forEach(System.err::println);
+        userList = mapper.selectList(null);
+        System.out.println("=========selectList========");
         userList.forEach(System.err::println);
 
         // 测试更新
-        this.testUpdate(user);
+        // this.testUpdate(user);
     }
 
     private void testUpdate(User user) {

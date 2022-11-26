@@ -1,6 +1,7 @@
 package mybatis.mate.encrypt.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import mybatis.mate.encrypt.config.SpiceBaseMapper;
 import mybatis.mate.encrypt.entity.User;
 import mybatis.mate.encrypt.entity.vo.UserDto;
 import org.apache.ibatis.annotations.Mapper;
@@ -10,7 +11,7 @@ import org.apache.ibatis.annotations.Update;
 import java.util.List;
 
 @Mapper
-public interface UserMapper extends BaseMapper<User> {
+public interface UserMapper extends SpiceBaseMapper<User> {
 
     @Update("update user set password=#{u.password},email=#{u.email} where id=#{id}")
     Integer testUpdateById(@Param("id") Long id, @Param("u") User user);

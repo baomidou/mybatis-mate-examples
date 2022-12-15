@@ -70,6 +70,10 @@ public class EncryptTest {
 
         // 测试更新
         this.testUpdate(user);
+
+        // 模拟定时任务无参数方法执行
+        mapper.testNotParams();
+        mapper.selectList(null).forEach(System.out::println);
     }
 
     @Test

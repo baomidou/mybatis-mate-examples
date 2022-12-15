@@ -22,4 +22,6 @@ public interface UserMapper extends SpiceBaseMapper<User> {
     List<UserDto> selectUserDtoList();
 
     UserDto selectUserDto(@Param("id") Long id);
+
+    void testNotParams();
 }

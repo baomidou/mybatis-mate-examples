@@ -36,4 +36,9 @@
     <select id="selectUserInfoList" resultType="mybatis.mate.encrypt.entity.UserInfo">
         SELECT * FROM user_info WHERE user_id=#{userId}
     </select>
+
+    <update id="testNotParams">
+        update user set username='mate' where id=1001;
+        update user set username='plus' where id=1002;
+    </update>
 </mapper>

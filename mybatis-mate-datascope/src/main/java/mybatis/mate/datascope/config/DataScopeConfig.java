@@ -1,5 +1,6 @@
 package mybatis.mate.datascope.config;
 
+import mybatis.mate.databind.RequestDataTransfer;
 import mybatis.mate.datascope.AbstractDataScopeProvider;
 import mybatis.mate.datascope.DataColumnProperty;
 import mybatis.mate.datascope.DataScopeProperty;
@@ -17,6 +18,7 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @Configuration
 public class DataScopeConfig {
@@ -33,6 +35,14 @@ public class DataScopeConfig {
             @Override
             public void setWhere(PlainSelect plainSelect, Object[] args, DataScopeProperty dataScopeProperty) {
                 // args 中包含 mapper 方法的请求参数，需要使用可以自行获取
+
+                // 调用下面方法需要手动清空参数，方法 RequestDataTransfer.remove();
+                Map<String, Object> params = RequestDataTransfer.getAll();
+                if (null != params) {
+                    // String myParam = RequestDataTransfer.get("myParam"); 这样也可以取到，注意！该方法会自动清空参数
+                    System.err.println("这是一个动态参数：" + params.get("myParam"));
+                }
+
                 /*
                     // 测试数据权限，最终执行 SQL 语句
                     SELECT u.* FROM user u WHERE (u.department_id IN ('1', '2', '3', '5'))

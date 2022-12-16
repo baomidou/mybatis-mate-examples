@@ -2,6 +2,7 @@ package mybatis.mate.datascope.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import mybatis.mate.databind.RequestDataTransfer;
 import mybatis.mate.datascope.entity.User;
 import mybatis.mate.datascope.mapper.UserMapper;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,9 @@ public class UserService {
     public void dataScope() {
         System.err.println("----- selectList ---- 使用类注解 ");
         userMapper.selectList(null).forEach(System.out::println);
+
+
+        RequestDataTransfer.put("myParam", "这个参数可以动态的改变，在数据权限内容识别做更多的事情");
 
         System.err.println("----- 自定义方法 selectTestList ---- 使用方法注解 ");
         Page page = new Page<User>(1, 20);

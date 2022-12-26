@@ -19,6 +19,7 @@ public class MyShardingProcessor implements IShardingProcessor {
         // 这里返回 true 将切换到指定 datasourceKey 对应数据源，返回 false 按默认规则自动切换
         // 切换到指定 datasourceKey 数据源调用 ShardingKey.change("mysqlt2"); 记得返回 true 切换成功
 
+        // false 会调用策略  true 当前内部处理 datasourceKey 该类和策略类不是必须都要
         return false;
     }
 

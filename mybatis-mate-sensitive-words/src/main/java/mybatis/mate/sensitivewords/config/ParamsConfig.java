@@ -3,6 +3,7 @@ package mybatis.mate.sensitivewords.config;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.AllArgsConstructor;
 import mybatis.mate.params.IParamsProcessor;
 import mybatis.mate.params.SensitiveWordsProcessor;
 import mybatis.mate.sensitivewords.entity.SensitiveWords;
@@ -11,14 +12,13 @@ import org.ahocorasick.trie.Emit;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.annotation.Resource;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Configuration
+@AllArgsConstructor
 public class ParamsConfig {
-    @Resource
     private SensitiveWordsMapper sensitiveWordsMapper;
 
     @Bean

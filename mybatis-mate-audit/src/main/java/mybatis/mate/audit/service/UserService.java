@@ -1,5 +1,6 @@
 package mybatis.mate.audit.service;
 
+import lombok.AllArgsConstructor;
 import mybatis.mate.audit.DataAuditEvent;
 import mybatis.mate.audit.DataAuditor;
 import mybatis.mate.audit.entity.User;
@@ -10,13 +11,10 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
-
 @Service
+@AllArgsConstructor
 public class UserService {
-    @Resource
     private UserMapper userMapper;
-    @Resource
     private ApplicationEventPublisher applicationEventPublisher;
 
     @Transactional(rollbackFor = Exception.class)

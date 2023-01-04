@@ -2,18 +2,18 @@ package mybatis.mate.datascope.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import lombok.AllArgsConstructor;
 import mybatis.mate.databind.RequestDataTransfer;
 import mybatis.mate.datascope.entity.User;
 import mybatis.mate.datascope.mapper.UserMapper;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class UserService {
-    @Resource
     private UserMapper userMapper;
 
     public void dataScopeDefaultMethod() {

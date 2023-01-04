@@ -1,18 +1,18 @@
 package mybatis.mate.sharding.jta.atomikos.config;
 
+import lombok.AllArgsConstructor;
 import mybatis.mate.ddl.IDdl;
 import mybatis.mate.sharding.ShardingDatasource;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
 @Component
+@AllArgsConstructor
 public class Db1 implements IDdl {
-    @Resource
     private ShardingDatasource shardingDatasource;
 
     @Override

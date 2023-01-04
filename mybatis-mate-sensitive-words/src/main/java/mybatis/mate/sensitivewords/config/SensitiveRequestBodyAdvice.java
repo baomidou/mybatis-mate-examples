@@ -9,7 +9,6 @@ import org.springframework.http.converter.json.MappingJacksonInputMessage;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.RequestBodyAdviceAdapter;
-import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -32,11 +31,11 @@ public class SensitiveRequestBodyAdvice extends RequestBodyAdviceAdapter {
     public boolean supports(MethodParameter methodParameter, Type targetType,
                             Class<? extends HttpMessageConverter<?>> converterType) {
         Class<?> clazz;
-        if (targetType instanceof ParameterizedTypeImpl) {
-            clazz = ((ParameterizedTypeImpl) targetType).getRawType();
-        } else {
+//        if (targetType instanceof ParameterizedTypeImpl) {
+//            clazz = ((ParameterizedTypeImpl) targetType).getRawType();
+//        } else {
             clazz = (Class) targetType;
-        }
+//        }
         return Sensitived.class.isAssignableFrom(clazz);
     }
 

@@ -1,5 +1,6 @@
 package mybatis.mate.sensitive.jackson.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import mybatis.mate.databind.ISensitiveStrategy;
 import mybatis.mate.databind.RequestDataTransfer;
 import mybatis.mate.sensitive.jackson.entity.User;
@@ -9,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

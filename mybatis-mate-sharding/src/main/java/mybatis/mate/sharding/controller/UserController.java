@@ -3,6 +3,7 @@ package mybatis.mate.sharding.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import lombok.AllArgsConstructor;
 import mybatis.mate.ddl.DdlScript;
 import mybatis.mate.sharding.ShardingKey;
 import mybatis.mate.sharding.entity.User;
@@ -10,14 +11,12 @@ import mybatis.mate.sharding.mapper.UserMapper;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import java.io.StringReader;
 
 @RestController
+@AllArgsConstructor
 public class UserController {
-    @Resource
     private DdlScript ddlScript;
-    @Resource
     private UserMapper mapper;
 
     // 测试访问 http://localhost:8080/test

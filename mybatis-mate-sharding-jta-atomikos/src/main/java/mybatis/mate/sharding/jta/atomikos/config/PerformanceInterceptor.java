@@ -28,7 +28,7 @@ import java.util.*;
  * @Date 2021-10-09
  */
 @Slf4j
-@Component
+//@Component
 @Intercepts({@Signature(type = StatementHandler.class, method = "query", args = {Statement.class, ResultHandler.class}),
         @Signature(type = StatementHandler.class, method = "update", args = {Statement.class}),
         @Signature(type = StatementHandler.class, method = "batch", args = {Statement.class})})

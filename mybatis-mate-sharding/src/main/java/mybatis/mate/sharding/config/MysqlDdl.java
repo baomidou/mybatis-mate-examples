@@ -1,20 +1,20 @@
 package mybatis.mate.sharding.config;
 
+import lombok.AllArgsConstructor;
 import mybatis.mate.config.ShardingGroupProperty;
 import mybatis.mate.ddl.IDdl;
 import mybatis.mate.sharding.ShardingDatasource;
 import mybatis.mate.sharding.ShardingKey;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
 @Component
+@AllArgsConstructor
 public class MysqlDdl implements IDdl {
-    @Resource
     private ShardingDatasource shardingDatasource;
 
     @Override

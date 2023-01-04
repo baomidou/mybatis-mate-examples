@@ -1,5 +1,6 @@
 package mybatis.mate.sharding.config;
 
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import mybatis.mate.sharding.ShardingHealthIndicator;
 import org.springframework.boot.actuate.health.Health;
@@ -7,7 +8,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 
 /**
  * 如果外部未调用 spring boot 的健康检查 http://localhost:8080/actuator/health
@@ -17,8 +17,8 @@ import javax.annotation.Resource;
 @Slf4j
 @Component
 @EnableScheduling   // 这个开启定时任务，注意请勿重复设置
+@AllArgsConstructor
 public class ScheduledConfig {
-    @Resource
     private ShardingHealthIndicator shardingHealthIndicator;
 
     /**

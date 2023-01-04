@@ -5,7 +5,7 @@ dependencies {
     implementation("org.postgresql:postgresql")
     implementation("mysql:mysql-connector-java")
     // spring boot 推荐 jta atomikos 分布式事务解决方案
-    implementation("org.springframework.boot:spring-boot-starter-jta-atomikos")
+    implementation("org.springframework.boot:spring-boot-starter-jta-atomikos:2.7.7")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("junit:junit")

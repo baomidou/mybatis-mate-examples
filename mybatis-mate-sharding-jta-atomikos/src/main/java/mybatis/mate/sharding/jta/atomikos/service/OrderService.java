@@ -1,15 +1,15 @@
 package mybatis.mate.sharding.jta.atomikos.service;
 
+import lombok.AllArgsConstructor;
 import mybatis.mate.sharding.jta.atomikos.entity.Order;
 import mybatis.mate.sharding.jta.atomikos.mapper.OrderMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
 @Service
+@AllArgsConstructor
 public class OrderService {
-    @Autowired
     public OrderMapper orderMapper;
 
     /**

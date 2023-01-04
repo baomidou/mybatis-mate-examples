@@ -1,5 +1,6 @@
 package mybatis.mate.sm;
 
+import lombok.AllArgsConstructor;
 import mybatis.mate.encrypt.GMEncryptor;
 import mybatis.mate.encrypt.KeyGenerator;
 import mybatis.mate.sm.entity.User;
@@ -7,10 +8,10 @@ import mybatis.mate.sm.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.annotation.Resource;
 import java.nio.charset.StandardCharsets;
 import java.security.PrivateKey;
 import java.security.PublicKey;
@@ -23,7 +24,7 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class EncryptTest {
-    @Resource
+    @Autowired
     private UserMapper mapper;
 
     @Test

@@ -1,13 +1,13 @@
 package mybatis.mate.sharding.jta.atomikos.service;
 
+import lombok.AllArgsConstructor;
 import mybatis.mate.sharding.jta.atomikos.entity.Sku;
 import mybatis.mate.sharding.jta.atomikos.mapper.SkuMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@AllArgsConstructor
 public class SkuService {
-    @Autowired
     private SkuMapper skuMapper;
 
     /**

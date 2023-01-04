@@ -1,8 +1,8 @@
 // 编译脚本
 buildscript {
     ext {
-        springBootVersion = "2.7.0"
-        mybatisPlusVersion = "3.5.2"
+        springBootVersion = "3.0.1"
+        mybatisPlusVersion = "3.5.3"
     }
 
     // 仓库配置
@@ -49,6 +49,7 @@ subprojects {
         maven { url 'https://maven.aliyun.com/repository/google' }
         maven { url 'https://repo.spring.io/release' }
         maven { url 'https://repo.spring.io/milestone' }
+        mavenCentral()
     }
 
     // 依赖管理
@@ -70,7 +71,6 @@ subprojects {
             dependency("org.postgresql:postgresql:42.3.1")
             dependency("mysql:mysql-connector-java:8.0.26")
             // 编译测试
-            dependency("javax.servlet:javax.servlet-api:3.1.0")
             dependency("junit:junit:4.12")
         }
     }
@@ -82,7 +82,7 @@ subprojects {
 
         // api fileTree(dir: "../libs", include: "*.jar")
 
-        api("com.baomidou:mybatis-mate-starter:1.2.7")
+        api("com.baomidou:mybatis-mate-starter:1.2.8")
 
         api("com.baomidou:mybatis-plus-boot-starter")
         api("org.springframework.boot:spring-boot-starter-web")
@@ -96,6 +96,6 @@ subprojects {
     }
 
     // 编译环境 JDK1.8
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }

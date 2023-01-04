@@ -1,5 +1,6 @@
 package mybatis.mate.dict.config;
 
+import lombok.AllArgsConstructor;
 import mybatis.mate.annotation.FieldBind;
 import mybatis.mate.dict.entity.StatusEnum;
 import mybatis.mate.dict.mapper.UserMapper;
@@ -8,13 +9,12 @@ import org.apache.ibatis.reflection.MetaObject;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
+@AllArgsConstructor
 public class DataBind implements IDataBind {
-    @Resource
     private ApplicationContext applicationContext;
 
     /**

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @RestController
 public class UserController {
@@ -45,12 +46,17 @@ public class UserController {
     }
 
     // 测试访问 http://localhost:8080/list
-    // 不脱敏 http://localhost:8080/list?skip=1
+    // 全部不脱敏 http://localhost:8080/list?skip=1
+    // 指定属性不脱敏 http://localhost:8080/list?skip=2
     @GetMapping("/list")
     public List<User> list(HttpServletRequest request) {
-        if ("1".equals(request.getParameter("skip"))) {
+        String skip = request.getParameter("skip");
+        if (Objects.equals("1", skip)) {
             // 跳过脱密处理
             RequestDataTransfer.skipSensitive();
+        } else if (null != skip) {
+            // 忽略 username 及 email 属性
+            RequestDataTransfer.skipSensitive("username;email");
         }
         return userMapper.selectList(null);
     }

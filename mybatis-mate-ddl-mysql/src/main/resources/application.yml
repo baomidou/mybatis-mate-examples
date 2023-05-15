@@ -10,7 +10,7 @@ mybatis-mate:
   cert:
     # 请添加微信wx153666购买授权，不白嫖从我做起！ 测试证书会失效，请勿正式环境使用
     grant: thisIsTestLicense
-    license: TtY9GC88CzSkEmUhzIyvM2MJKvsgPyxoNCExH4/GhaBwuTQ93aeLaR6/dM49wMSk+oQdmqUibCM8b5H74s1Nx+2C5V3U1gKiLtddVc8Eg8oC1F2nLxOiDKDvPpdxWFGsPW6mQE2LDr+tK8GXpFS3N8xwmYy/gHCwQ4Avqp9JqBbke7pZzL2adIlxYHmCYpfNTN+NRHIEFaGFTBlzZHDb3UfJaeqLaAtWBol0QOPEM69Kz3JSemxBHnEO1ID75bwwmkgqC7Ps4z9iYAK9GLzzaPwSiFELNCmIvwa5YSJLxP9NMQUWbVGIRqehxnVqfgx/68+yIfpByqGTMxLR33yeEQ==
+    license: SQ+SLNrJseP7MgzYGYAG2LVjyHw42h5dhDDx4TsuqCy0eYE7q+jxfqRP+YKmL2TQi3tGe1bT8v/3I9Hea0RdhGirdnYY/5HGXUyzKBE03MOG/V9AFkefMrPQRu2fdAzp9ggWtWVhnKyn8FAFL6ky3lJB3J8XSFDygObTRuHSRnJEAMtsaA7Qo5SCeMMeb4nrHWk1uXXM7xJpAb9IZYAcZFALo3utw3X6i7WkzfE6Z8hsu5gV+jWFyDasBX8Lg6btSRH5guqXBNwhAlth3vDlJtiHSnVx6DKSRB5/nsdFk8jcgOvS5cQL4k3AE6g3ETBqicZterd/OxnGeBAGeFPUjA==
 
 # Logger Config
 logging:

@@ -1,6 +1,5 @@
 package mybatis.mate.sm;
 
-import lombok.AllArgsConstructor;
 import mybatis.mate.encrypt.GMEncryptor;
 import mybatis.mate.encrypt.KeyGenerator;
 import mybatis.mate.sm.entity.User;

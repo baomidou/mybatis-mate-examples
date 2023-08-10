@@ -7,13 +7,13 @@ mybatis-plus 企业（数据优雅处理）模块
 
 - Spring Boot 引入自动依赖注解包（该包自动会引入 annotation 注解包）
 
-> SpringBoot 3.X 使用 1.3.0 版本 SpringBoot 2.X 使用 1.3.0-sp2 版本
+> SpringBoot 3.X 使用 1.3.1 版本 SpringBoot 2.X 使用 1.3.1-sp2 版本
 
 ```
 <dependency>
   <groupId>com.baomidou</groupId>
   <artifactId>mybatis-mate-starter</artifactId>
-  <version>1.3.0</version>
+  <version>1.3.1</version>
 </dependency>
 ```
 
@@ -23,7 +23,7 @@ mybatis-plus 企业（数据优雅处理）模块
 <dependency>
   <groupId>com.baomidou</groupId>
   <artifactId>mybatis-mate-annotation</artifactId>
-  <version>1.3.0</version>
+  <version>1.3.1</version>
 </dependency>
 ```
 

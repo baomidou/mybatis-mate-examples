@@ -32,7 +32,7 @@ mybatis-mate:
   cert:
     # 请添加微信wx153666购买授权，不白嫖从我做起！ 测试证书会失效，请勿正式环境使用
     grant: thisIsTestLicense
-    license: SQ+SLNrJseP7MgzYGYAG2LVjyHw42h5dhDDx4TsuqCy0eYE7q+jxfqRP+YKmL2TQi3tGe1bT8v/3I9Hea0RdhGirdnYY/5HGXUyzKBE03MOG/V9AFkefMrPQRu2fdAzp9ggWtWVhnKyn8FAFL6ky3lJB3J8XSFDygObTRuHSRnJEAMtsaA7Qo5SCeMMeb4nrHWk1uXXM7xJpAb9IZYAcZFALo3utw3X6i7WkzfE6Z8hsu5gV+jWFyDasBX8Lg6btSRH5guqXBNwhAlth3vDlJtiHSnVx6DKSRB5/nsdFk8jcgOvS5cQL4k3AE6g3ETBqicZterd/OxnGeBAGeFPUjA==
+    license: GPbNAhq+4Y+mHxpEw0UmAp43k8iCgO0p//zEDAHaQdv7NCJCgAxdl5TYlwkQGKF9nCfXEfuN7a2Yls8xIEzfcTUmMQ8PrlLsF3BNRmwOLrET+rYAXvRN6gmYgsPgyB1vYkZctdz1H43BkAI/M0FLRJ9NQ7wuZsmo3dOgWXMTsbSx7UgpBZObc2UUdcNaQp1Vha76PKnX8L4Y6LDacS8SqqVepKgN5IR/Wr7nDD0+ux2Q2Q+0QMT/H1mQiNw64h1AHSoKQlMl8OSojPk1AV8vBUXvvRD8zbrgqXBhHN2m5Bn9ap6CDlR0GGls2oU8Qxxqyfs2rck3yc2z3xdEmWg6jQ==
   # 全局配置加密算法密钥
   encryptor:
     # 随机字符串作为密钥即可

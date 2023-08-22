@@ -9,6 +9,8 @@ mybatis-plus 企业（数据优雅处理）模块
 
 > SpringBoot 3.X 使用 1.3.1 版本 SpringBoot 2.X 使用 1.3.1-sp2 版本
 
+- 注意不同密钥需要使用指定算法生成密钥，例如 `SM2` `SM4` 使用 `KeyGenerator` 类生成，不可随意编写任意字符串。
+
 ```
 <dependency>
   <groupId>com.baomidou</groupId>

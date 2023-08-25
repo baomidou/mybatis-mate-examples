@@ -2,7 +2,8 @@ package mybatis.mate.encrypt.mapper;
 
 import mybatis.mate.encrypt.config.SpiceBaseMapper;
 import mybatis.mate.encrypt.entity.User;
-import mybatis.mate.encrypt.entity.vo.UserDto;
+import mybatis.mate.encrypt.entity.dto.UserDTO;
+import mybatis.mate.encrypt.entity.vo.UserVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Update;
@@ -19,9 +20,9 @@ public interface UserMapper extends SpiceBaseMapper<User> {
 
     Integer updateBatchUserById(@Param("userList") List<User> userList);
 
-    List<UserDto> selectUserDtoList();
+    List<UserVO> selectUserVOList(@Param("dto") UserDTO dto);
 
-    UserDto selectUserDto(@Param("id") Long id);
+    UserVO selectUserDto(@Param("id") Long id);
 
     void testNotParams();
 }

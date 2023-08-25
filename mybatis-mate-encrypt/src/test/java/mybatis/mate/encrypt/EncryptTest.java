@@ -5,7 +5,8 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import mybatis.mate.annotation.Algorithm;
 import mybatis.mate.config.EncryptorProperties;
 import mybatis.mate.encrypt.entity.User;
-import mybatis.mate.encrypt.entity.vo.UserDto;
+import mybatis.mate.encrypt.entity.dto.UserDTO;
+import mybatis.mate.encrypt.entity.vo.UserVO;
 import mybatis.mate.encrypt.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -242,8 +243,10 @@ public class EncryptTest {
     @Test
     @Order(7)
     public void xmlResultMapList() {
-        List<UserDto> userDtoList = mapper.selectUserDtoList();
-        userDtoList.forEach(u -> {
+        UserDTO dto = new UserDTO();
+        dto.setEmail("4U9wCKQs7FfGsaS/YNXy6vXlVBM166Am1h9tqGPCqWg=");
+        List<UserVO> userVOList = mapper.selectUserVOList(dto);
+        userVOList.forEach(u -> {
             System.err.println("实体加密内容：" + u.getRsa());
             u.getUserInfos().forEach(t -> System.err.println("关联查询加密内容：" + t.getRsa()));
             System.err.println("-----------------------------------------");
@@ -253,9 +256,9 @@ public class EncryptTest {
     @Test
     @Order(8)
     public void xmlResultMap() {
-        UserDto userDto = mapper.selectUserDto(1001L);
-        System.err.println("实体加密内容：" + userDto.getRsa());
-        userDto.getUserInfos().forEach(t -> System.err.println("关联查询加密内容：" + t.getRsa()));
+        UserVO userVO = mapper.selectUserDto(1001L);
+        System.err.println("实体加密内容：" + userVO.getRsa());
+        userVO.getUserInfos().forEach(t -> System.err.println("关联查询加密内容：" + t.getRsa()));
     }
 
     @Test

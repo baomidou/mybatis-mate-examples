@@ -9,7 +9,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class UserDto extends User {
+public class UserVO extends User {
     private List<UserInfo> userInfos;
 
 }

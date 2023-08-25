@@ -4,7 +4,7 @@ import mybatis.mate.annotation.Algorithm;
 import mybatis.mate.encrypt.IEncryptor;
 import org.apache.ibatis.reflection.MetaObject;
 
-// 自定义加密算法，这里为开启使用默认加密库
+// 自定义加密算法，这里为开启使用默认加密库 @Component 注解必须放在 spring 能够扫描到的目录
 //@Component
 public class CustomEncryptor implements IEncryptor {
 

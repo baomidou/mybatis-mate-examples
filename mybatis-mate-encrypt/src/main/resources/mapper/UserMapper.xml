@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mybatis.mate.encrypt.mapper.UserMapper">
-    <resultMap id="BaseResultMap" type="mybatis.mate.encrypt.entity.vo.UserDto">
+    <resultMap id="BaseResultMap" type="mybatis.mate.encrypt.entity.vo.UserVO">
         <id column="id" property="id" jdbcType="VARCHAR"/>
         <result column="username" property="username" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR"/>
@@ -25,8 +25,8 @@
         </foreach>
     </update>
 
-    <select id="selectUserDtoList" resultMap="BaseResultMap">
-        SELECT * FROM user
+    <select id="selectUserVOList" resultMap="BaseResultMap">
+        SELECT * FROM user WHERE email=#{dto.email,typeHandler=mybatis.mate.encrypt.entity.type.RSATypeHandler}
     </select>
 
     <select id="selectUserDto" resultMap="BaseResultMap">

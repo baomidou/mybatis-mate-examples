@@ -82,8 +82,8 @@ subprojects {
 
         // api fileTree(dir: "../libs", include: "*.jar")
 
-        // spring boot 2.X 请用 1.3.1-sp2 版本
-        api("com.baomidou:mybatis-mate-starter:1.3.1")
+        // spring boot 2.X 请用 1.3.2-sp2 版本
+        api("com.baomidou:mybatis-mate-starter:1.3.2")
 
         api("com.baomidou:mybatis-plus-boot-starter")
         api("org.springframework.boot:spring-boot-starter-web")

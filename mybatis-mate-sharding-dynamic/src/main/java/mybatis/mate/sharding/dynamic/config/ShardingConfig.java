@@ -17,6 +17,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Configuration
 public class ShardingConfig {
@@ -41,14 +42,16 @@ public class ShardingConfig {
         mysqlT1.setUrl("jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC");
         mysqlT1.setUsername("root");
         mysqlT1.setSchema("test");
-        shardingProperties.setDatasource(new HashMap<String, List<DataSourceProperty>>(16) {{
+        shardingProperties.setDatasource(new HashMap<>(16) {{
             put("mysql", Arrays.asList(mysqlT1));
         }});
         Map<String, DataSource> dataSources = new HashMap<>(16);
+        Map<String, DataSourceProperty> dataSourceProperties = new ConcurrentHashMap<>(16);
         shardingProperties.getDatasource().forEach((k, v) -> v.forEach(d -> {
             try {
                 String datasourceKey = k + d.getKey();
                 dataSources.put(datasourceKey, dataSourceProvider.createDataSource(k, d));
+                dataSourceProperties.put(datasourceKey, d);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -56,6 +59,6 @@ public class ShardingConfig {
         if (null != shardingStrategy) {
             shardingProperties.setShardingStrategy(shardingStrategy);
         }
-        return new ShardingDatasource(dataSourceProvider, dataSources, shardingProperties);
+        return new ShardingDatasource(dataSourceProvider, dataSources, dataSourceProperties, shardingProperties);
     }
 }

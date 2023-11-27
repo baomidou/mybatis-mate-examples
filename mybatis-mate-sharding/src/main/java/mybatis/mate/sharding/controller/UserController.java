@@ -19,8 +19,14 @@ public class UserController {
     @GetMapping("/test")
     public boolean testSharding() throws Exception {
         this.initMysqlT2();
-        userService.test();
-        return true;
+        return userService.test();
+    }
+
+    // 测试访问 http://localhost:8080/test2
+    @GetMapping("/test2")
+    public boolean testSharding2() throws Exception {
+        this.initMysqlT2();
+        return userService.testRw();
     }
 
     public void initMysqlT2() throws Exception {

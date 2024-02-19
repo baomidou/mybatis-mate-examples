@@ -62,5 +62,5 @@ public interface UserMapper extends BaseMapper<User> {
 
     @DataScope(type = "def")
     @Override
-    <P extends IPage<User>> P selectPage(P page, @Param(Constants.WRAPPER) Wrapper<User> queryWrapper);
+    List<User> selectList(IPage<User> page, @Param(Constants.WRAPPER) Wrapper<User> queryWrapper);
 }

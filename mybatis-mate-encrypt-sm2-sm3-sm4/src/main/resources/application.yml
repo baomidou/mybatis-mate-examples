@@ -15,7 +15,7 @@ mybatis-mate:
   cert:
     # 请添加微信wx153666购买授权，不白嫖从我做起！ 测试证书会失效，请勿正式环境使用
     grant: thisIsTestLicense
-    license: GPbNAhq+4Y+mHxpEw0UmAp43k8iCgO0p//zEDAHaQdv7NCJCgAxdl5TYlwkQGKF9nCfXEfuN7a2Yls8xIEzfcTUmMQ8PrlLsF3BNRmwOLrET+rYAXvRN6gmYgsPgyB1vYkZctdz1H43BkAI/M0FLRJ9NQ7wuZsmo3dOgWXMTsbSx7UgpBZObc2UUdcNaQp1Vha76PKnX8L4Y6LDacS8SqqVepKgN5IR/Wr7nDD0+ux2Q2Q+0QMT/H1mQiNw64h1AHSoKQlMl8OSojPk1AV8vBUXvvRD8zbrgqXBhHN2m5Bn9ap6CDlR0GGls2oU8Qxxqyfs2rck3yc2z3xdEmWg6jQ==
+    license: Q3tfuOzExbYXqM1aCIX/Xi/yAylM+vB5VXioQdObIqKWWc90fivXEGAzW+NEahpQeDzjdy+AUDJdvsDBylkTEyN6msoZQ2SIYxuuiMV4AJj7q1DYDp+pxZfSZOQnwKC6WR9/qNHUzM+T1RSlX/x9hojdmZLG7sLXa3cE91U+y3Ch3t5XAz62Z+W2YJUxfxSt0BLdy+YpNfQ8//fqTTrMuMQ1aHZ3VW3kxG4bSw1VzqxWdiHTEO0y2ZmY9ULTLkStarewLJbCiBL8e1KRAf4JqCQvRvOQuUtEcaPhj//s8rA9K6OBljCI+/WEftA8qwIAANs3VypFi5W/uhVPO1RTTw==
   encryptor:
     password: 4861bbb8e07a8673f67781103220c400
     publicKey: MFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAEPgMdGnjGad3tvzGI7Rlidr0XS/DdKGjLO2zxLPfYxSqHEi77mO4UWdnv0QEZfPN7HrskYFIleM9pCDy/jahVyQ==

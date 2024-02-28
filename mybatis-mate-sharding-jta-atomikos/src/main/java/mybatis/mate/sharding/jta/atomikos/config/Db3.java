@@ -1,9 +1,9 @@
 package mybatis.mate.sharding.jta.atomikos.config;
 
+import com.baomidou.mybatisplus.extension.ddl.IDdl;
+import com.baomidou.mybatisplus.extension.ddl.history.IDdlGenerator;
+import com.baomidou.mybatisplus.extension.ddl.history.PostgreDdlGenerator;
 import lombok.AllArgsConstructor;
-import mybatis.mate.ddl.IDdl;
-import mybatis.mate.ddl.IDdlGenerator;
-import mybatis.mate.ddl.PostgresDdlGenerator;
 import mybatis.mate.sharding.ShardingDatasource;
 import org.springframework.stereotype.Component;
 
@@ -36,6 +36,6 @@ public class Db3 implements IDdl {
     @Override
     public IDdlGenerator getDdlGenerator() {
         // 指定数据库 ddl 创建处理器
-        return PostgresDdlGenerator.newInstance();
+        return PostgreDdlGenerator.newInstance();
     }
 }

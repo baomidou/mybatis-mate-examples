@@ -1,8 +1,8 @@
 package mybatis.mate.sharding.config;
 
+import com.baomidou.mybatisplus.extension.ddl.IDdl;
 import lombok.AllArgsConstructor;
 import mybatis.mate.config.ShardingGroupProperty;
-import mybatis.mate.ddl.IDdl;
 import mybatis.mate.sharding.ShardingDatasource;
 import mybatis.mate.sharding.ShardingKey;
 import org.springframework.stereotype.Component;

@@ -1,7 +1,7 @@
 package mybatis.mate.sharding.controller;
 
+import com.baomidou.mybatisplus.extension.ddl.DdlScript;
 import lombok.AllArgsConstructor;
-import mybatis.mate.ddl.DdlScript;
 import mybatis.mate.sharding.ShardingKey;
 import mybatis.mate.sharding.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;

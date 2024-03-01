@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
 
 
 /**
- * 如果外部未调用 spring boot 的健康检查 http://localhost:8080/actuator/health
- *
- * 可以如下使用定时任务检查数据库健康状况
+ * 如果外部未调用 spring boot 的健康检查 <a href="http://localhost:8080/actuator/health">...</a>
+ * <p>
+ * 可以如下使用定时任务检查数据库健康状况，这个方法不是必须的
  */
 @Slf4j
 @Component

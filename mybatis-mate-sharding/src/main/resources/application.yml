@@ -5,7 +5,7 @@ mybatis-mate:
     grant: thisIsTestLicense
     license: Q3tfuOzExbYXqM1aCIX/Xi/yAylM+vB5VXioQdObIqKWWc90fivXEGAzW+NEahpQeDzjdy+AUDJdvsDBylkTEyN6msoZQ2SIYxuuiMV4AJj7q1DYDp+pxZfSZOQnwKC6WR9/qNHUzM+T1RSlX/x9hojdmZLG7sLXa3cE91U+y3Ch3t5XAz62Z+W2YJUxfxSt0BLdy+YpNfQ8//fqTTrMuMQ1aHZ3VW3kxG4bSw1VzqxWdiHTEO0y2ZmY9ULTLkStarewLJbCiBL8e1KRAf4JqCQvRvOQuUtEcaPhj//s8rA9K6OBljCI+/WEftA8qwIAANs3VypFi5W/uhVPO1RTTw==
   sharding:
-    health: true # 健康检测
+    health: true # 健康检测数据源需要设置 SQL 检测语句 test-query: select 1
     primary: mysql # 默认选择数据源，该项配置必须有否则无法加载启动
     datasource:
       mysql:
@@ -14,12 +14,14 @@ mybatis-mate:
           url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
           username: root
           schema: test
+          test-query: select 1
         - key: t2
           cluster: slave # 从库读写分离时候负责 sql 查询操作，主库 master 默认可以不写
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://localhost:3306/test2?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
           username: root
           schema: test2
+          test-query: select 1
           hikari:
             maxLifetime: 1765000
             maximumPoolSize: 10
@@ -31,6 +33,7 @@ mybatis-mate:
           username: postgres
           password: 123456
           schema: test
+          test-query: select 1
           hikari:
             maxLifetime: 1765000
             maximumPoolSize: 10

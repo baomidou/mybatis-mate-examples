@@ -1,5 +1,6 @@
 package mybatis.mate.sm.mysql.aes.controller;
 
+import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
 import lombok.AllArgsConstructor;
 import mybatis.mate.sm.mysql.aes.entity.ComAttr;
 import mybatis.mate.sm.mysql.aes.mapper.ComAttrMapper;
@@ -26,6 +27,10 @@ public class TestController {
             comAttrMapper.insert(comAttr);
         }
         System.err.println(comAttr);
+
+        ComAttr comAttr1 = new LambdaQueryChainWrapper<>(comAttrMapper).eq(ComAttr::getAttrId, testId).one();
+        System.out.println(comAttr1.getAttrTitle());
+
         //输出的attrTitle属性性为解密后的
         return new HashMap<String, Object>(2) {{
             put("dbList", comAttrMapper.selectList(null));

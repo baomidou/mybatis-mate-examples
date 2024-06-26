@@ -3,7 +3,7 @@ mybatis-mate:
   cert:
     # 请添加微信wx153666购买授权，不白嫖从我做起！ 测试证书会失效，请勿正式环境使用
     grant: thisIsTestLicense
-    license: Q3tfuOzExbYXqM1aCIX/Xi/yAylM+vB5VXioQdObIqKWWc90fivXEGAzW+NEahpQeDzjdy+AUDJdvsDBylkTEyN6msoZQ2SIYxuuiMV4AJj7q1DYDp+pxZfSZOQnwKC6WR9/qNHUzM+T1RSlX/x9hojdmZLG7sLXa3cE91U+y3Ch3t5XAz62Z+W2YJUxfxSt0BLdy+YpNfQ8//fqTTrMuMQ1aHZ3VW3kxG4bSw1VzqxWdiHTEO0y2ZmY9ULTLkStarewLJbCiBL8e1KRAf4JqCQvRvOQuUtEcaPhj//s8rA9K6OBljCI+/WEftA8qwIAANs3VypFi5W/uhVPO1RTTw==
+    license: f4jwpVH/dXJO7OWQA0/nLCn4UIkYMPhNreM4AxdRcQtgWX7P1LLhJcuwkv7irO4Ra5577cSTCFIaT4deKzh937GNkkjTIXw+jtCK1cRCPLdfej20xpkXrchAWJmEEHH4uP2wecz2nDZ5+9McgYY0wMKbhEAfY0vpoXmQCUpKCNL/lD5IpayZVm4oCDj5lSPZpSQqv3vAO/rGKsgCu2lXaocrx6axbzZ4ZgRn6Fcv3v5lyblns2CsIxUoNvh9WOwm2MFnEPNSoXrfJ8FvhOet3SGGZ2OY1xzjIpx4XkV0MJdaMLdstPQqk1dMaHXSwW4zqgoNkFH8ZEu0/6xKxKT9bg==
   sharding:
     health: true # 健康检测数据源需要设置 SQL 检测语句 test-query: select 1
     primary: mysql # 默认选择数据源，该项配置必须有否则无法加载启动

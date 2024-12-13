@@ -3,7 +3,7 @@ mybatis-mate:
   cert:
     # 请添加微信wx153666购买授权，不白嫖从我做起！ 测试证书会失效，请勿正式环境使用
     grant: thisIsTestLicense
-    license: f4jwpVH/dXJO7OWQA0/nLCn4UIkYMPhNreM4AxdRcQtgWX7P1LLhJcuwkv7irO4Ra5577cSTCFIaT4deKzh937GNkkjTIXw+jtCK1cRCPLdfej20xpkXrchAWJmEEHH4uP2wecz2nDZ5+9McgYY0wMKbhEAfY0vpoXmQCUpKCNL/lD5IpayZVm4oCDj5lSPZpSQqv3vAO/rGKsgCu2lXaocrx6axbzZ4ZgRn6Fcv3v5lyblns2CsIxUoNvh9WOwm2MFnEPNSoXrfJ8FvhOet3SGGZ2OY1xzjIpx4XkV0MJdaMLdstPQqk1dMaHXSwW4zqgoNkFH8ZEu0/6xKxKT9bg==
+    license: Qw46ncaiXykSqBByQDTGLFmior/pd8kzu3B4aR1BW3SQkXer4DtwQ0o5f6LNqjnUg3qRSo/3w+UmqYoSXA8ZBrTf16OcXFbLl7V3WRCBLeoRDi1c9BTQjumEzt/8HTzM0n+/hg+GU57OJbDvBZQI40U3abKT84qCW0EqjNA2Kg4fOlaHhXn6w3mEHXc3aMw8H+rBtxWSXyZOYUp83QVcTfh+n9sGDeys3NF7zjOrFxb24wB5DTpg7yirXnjeZznqPFwnyu45mACLPP4T8rFjHlW18+Pv2xoqlUCXx4QRsdBQEUDi26u4z0dba+O2S/vl7QGNfXZvGhbmv59IJK/FLA==
   sharding:
     health: true # 健康检测
     primary: test # 默认选择数据源，该项配置必须有否则无法加载启动

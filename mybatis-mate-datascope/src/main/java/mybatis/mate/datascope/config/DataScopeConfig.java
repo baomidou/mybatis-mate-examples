@@ -9,9 +9,9 @@ import net.sf.jsqlparser.expression.Parenthesis;
 import net.sf.jsqlparser.expression.StringValue;
 import net.sf.jsqlparser.expression.operators.conditional.AndExpression;
 import net.sf.jsqlparser.expression.operators.relational.EqualsTo;
+import net.sf.jsqlparser.expression.operators.relational.ExpressionList;
 import net.sf.jsqlparser.expression.operators.relational.InExpression;
 import net.sf.jsqlparser.expression.operators.relational.LikeExpression;
-import net.sf.jsqlparser.expression.operators.relational.ParenthesedExpressionList;
 import net.sf.jsqlparser.schema.Column;
 import net.sf.jsqlparser.statement.delete.Delete;
 import net.sf.jsqlparser.statement.select.PlainSelect;
@@ -56,7 +56,7 @@ public class DataScopeConfig {
                     for (DataColumnProperty dataColumn : dataColumns) {
                         if ("department_id".equals(dataColumn.getName())) {
                             // 追加部门字段 IN 条件，也可以是 SQL 语句
-                            ParenthesedExpressionList itemsList = new ParenthesedExpressionList(
+                            ExpressionList itemsList = new ExpressionList(
                                     new StringValue("1"),
                                     new StringValue("2"),
                                     new StringValue("3"),
